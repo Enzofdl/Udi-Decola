@@ -16,17 +16,29 @@
         
         
   - [ ] Companhia Aérea -> Enzo Faria
-      - [ ] Construtor
-      - [ ] CNPJ
-      - [ ] Nome Oficial
-      - [ ] Nome Fantasia
-      - [ ] Faturamento
-      - [ ] Quanto deve pagar ao APP
-      - [ ] Data de Criação
-      - [ ] Alteração de nome fantasia
-      - [ ] Trechos
-      - [ ] Histórico de voos
-      - [ ] Descontos para VIPS
+      - [X] Construtor
+      - [X] CNPJ
+      - [X] Nome Oficial
+      - [X] Nome Fantasia
+          - [ ] Altera nome fantasia 
+      - [x] Faturamento
+          - [ ] Vincular à classe Voo 
+      - [X] Quanto deve pagar ao APP
+          - [ ] Vincular à classe Voo para calculo da taxa
+          - [ ] Vincular ao atributo estático TAXA da Classe UdiDecola 
+      - [X] Data de Criação
+      - [X] Alteração de nome fantasia
+          - [ ] Método de Alteração 
+      - [X] Trechos
+          - [ ] // public boolean NovoTrecho()
+          - [ ] // public boolean AlterarTrecho()
+          - [ ] // public boolean ApagarTrecho()
+          - [ ] // public Trecho BuscarTrecho()
+          - [ ] // public void MostrarTrechos()
+      - [X] Histórico de voos
+          - [ ] // public void AdicionarHistorico()
+          - [ ] // public void MostrarHistorico()
+      - [X] Descontos para VIPS
        
   
   - [ ] Trechos (Vinculado à aeroporto e companhia)
