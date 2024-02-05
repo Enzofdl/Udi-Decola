@@ -15,7 +15,7 @@
       - [ ] Visualizar Trechos 
         
         
-  - [ ] Companhia Aérea
+  - [ ] Companhia Aérea -> Enzo Faria
       - [ ] Construtor
       - [ ] CNPJ
       - [ ] Nome Oficial
