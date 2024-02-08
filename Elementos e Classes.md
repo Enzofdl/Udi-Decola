@@ -40,7 +40,7 @@
           - [ ] // public void MostrarHistorico()
       - [X] Descontos para VIPS
        
-  
+  - [ ] Superclasse empresa
   - [ ] Trechos (Vinculado à aeroporto e companhia)
       - [ ] Nome
       - [ ] Construtor
