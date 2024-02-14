@@ -7,12 +7,12 @@
       - [ ] Construtor
       - [ ] Nome
       - [ ] Cidade
-      - [ ] Vetor de Trechos
+      - [ ] Vetor de Trecho.Trechos
       - [ ] Registrar Trecho
       - [ ] Remover Trecho
       - [ ] Alterar Trecho
       - [ ] Buscar Trecho
-      - [ ] Visualizar Trechos 
+      - [ ] Visualizar Trecho.Trechos 
         
         
   - [ ] Companhia Aérea -> Enzo Faria
@@ -29,7 +29,7 @@
       - [X] Data de Criação
       - [X] Alteração de nome fantasia
           - [ ] Método de Alteração 
-      - [X] Trechos
+      - [X] Trecho.Trechos
           - [ ] // public boolean NovoTrecho()
           - [ ] // public boolean AlterarTrecho()
           - [ ] // public boolean ApagarTrecho()
@@ -40,20 +40,28 @@
           - [ ] // public void MostrarHistorico()
       - [X] Descontos para VIPS
        
+Trechos
+  
+  - [ ] Trecho.Trechos (Vinculado à aeroporto e companhia)
+      - [X] Nome
+      - [X] Construtor
+      - [X] Origem
+      - [X] Destino
+
   - [ ] Superclasse empresa
   - [ ] Trechos (Vinculado à aeroporto e companhia)
       - [ ] Nome
       - [ ] Construtor
       - [ ] Origem
       - [ ] Destino
+ main
       - [ ] Voos Futuros
       - [ ] Histórico de Voos
-      - [ ] Criar Trecho
-      - [ ] Encerrar Trecho
-      - [ ] Alterar Trecho
+      - [X] Criar Trecho
+      - [X] Encerrar Trecho
       
       
-  - [ ] Voo (Vinculado à Trechos)
+  - [ ] Voo (Vinculado à Trecho.Trechos)
       - [ ] Preço
       - [ ] Trecho
       - [ ] Quantidade Vendida
