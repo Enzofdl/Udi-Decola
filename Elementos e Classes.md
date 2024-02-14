@@ -40,12 +40,21 @@
           - [ ] // public void MostrarHistorico()
       - [X] Descontos para VIPS
        
+Trechos
   
   - [ ] Trecho.Trechos (Vinculado à aeroporto e companhia)
       - [X] Nome
       - [X] Construtor
       - [X] Origem
       - [X] Destino
+
+  - [ ] Superclasse empresa
+  - [ ] Trechos (Vinculado à aeroporto e companhia)
+      - [ ] Nome
+      - [ ] Construtor
+      - [ ] Origem
+      - [ ] Destino
+ main
       - [ ] Voos Futuros
       - [ ] Histórico de Voos
       - [X] Criar Trecho
