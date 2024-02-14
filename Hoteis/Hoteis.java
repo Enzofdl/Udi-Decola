@@ -1,9 +1,6 @@
 package Hoteis
 
 public class Hoteis{
-private final String cnpj;
-private final String nome;
-private String nomefantasia;
 private String endereco;
 private String anocriacao;
 private float avaliacao;
