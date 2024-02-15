@@ -4,6 +4,17 @@
 
 ## *Classes*
 
+  - [ ] Classe de Constantes para Validação
+      - [ ] Valida CNPJ
+      - [ ] Valida CPF
+      - [ ] Valida DATA (Voos)
+      - [ ] Valida Horarios (Voos)
+      - [ ] Valida Endereco
+      - [ ] Valida Quarto
+      - [ ] Valida Precos
+      - [ ] Valida Salario
+      - [ ] Valida Voo
+
   - [ ] Aeroporto (Cogitar a implementação e vinculação da Classe Cidades)
       - [ ] Construtor
       - [ ] Nome
@@ -61,29 +72,31 @@ Trechos
       - [X] Encerrar Trecho
       
       
-  - [ ] Voo (Vinculado à Trecho.Trechos)
-      - [ ] Preço
-      - [ ] Trecho
-      - [ ] Quantidade Vendida
-      - [ ] Data de saída
-      - [ ] Data de chegada
-      - [ ] Horários Planejados
-      - [ ] Horários em que aconteceram
-      - [ ] Alterar Preço
-      - [ ] Cancelar Voo
-      - [ ] Adiar/Adiantar Voo
+  - [X] Voo (Vinculado à Trecho.Trechos) (Único)
+      - [X] Preço
+      - [X] Trecho
+      - [X] Quantidade Vendida
+      - [X] Data de saída
+      - [X] Data de chegada
+      - [X] Horários Planejados
+      - [X] Horários em que aconteceram
+      - [X] Alterar Preço
+      - [X] Cancelar Voo
+      - [X] Adiar/Adiantar Voo
+      - [X] Venda
+      - [X] Confirmar Voo
 
    
   - [ ] Hoteis (Vinculados à cidades e funcionário)
-      - [ ] Nome
-      - [ ] Construtor
-      - [ ] CNPJ
-      - [ ] Nome Fantasia
-      - [ ] Endereço Completo
-      - [ ] Ano de Criação
-      - [ ] Nro de Estrelas
-      - [ ] Aceitação de PETS
-      - [ ] Nro de Quartos
+      - [X] Nome
+      - [X] Construtor
+      - [X] CNPJ
+      - [X] Nome Fantasia
+      - [X] Endereço Completo
+      - [X] Ano de Criação
+      - [X] Nro de Estrelas
+      - [X] Aceitação de PETS
+      - [X] Nro de Quartos
       - [ ] Vetor Quartos
       - [ ] SubClasse QUARTOS
         - [ ] Disponível
