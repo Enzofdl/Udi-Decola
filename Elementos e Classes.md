@@ -3,6 +3,7 @@
 
 
 ## *Classes*
+
   - [ ] Aeroporto (Cogitar a implementação e vinculação da Classe Cidades)
       - [ ] Construtor
       - [ ] Nome
@@ -48,13 +49,12 @@ Trechos
       - [X] Origem
       - [X] Destino
 
-  - [ ] Superclasse empresa
+  - [X] Superclasse empresa
   - [ ] Trechos (Vinculado à aeroporto e companhia)
       - [ ] Nome
       - [ ] Construtor
       - [ ] Origem
       - [ ] Destino
- main
       - [ ] Voos Futuros
       - [ ] Histórico de Voos
       - [X] Criar Trecho
