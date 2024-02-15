@@ -1,7 +1,5 @@
 # **Elementos e Classes a Serem Trabalhados**
 
-Enzo Faria
-
 ## *Classes*
 
   - [ ] Classe de Constantes para Validação
