@@ -1,4 +1,4 @@
-public class Funções_e_Constantes {
+public class Utilitario {
 
 
 
