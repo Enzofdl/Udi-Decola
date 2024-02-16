@@ -5,7 +5,7 @@ public class Pessoa {
     private String nome;
     private String CPF;
 
-    private Data_Nascimento nascimento;
+    private Datanasc nascimento;
 
     private Endereco end;
 
@@ -17,7 +17,7 @@ public class Pessoa {
         this.nome = nome;
         if(Utilitario.validacpf(CPF)) this.CPF = CPF;
         else this.CPF = "";
-        Data_Nascimento nascimento = new Data_Nascimento(dia, mes, ano);
+        Datanasc nascimento = new Datanasc(dia, mes, ano);
     }
     public String getCPF() {
         return CPF;
@@ -35,11 +35,11 @@ public class Pessoa {
         return nome;
     }
 
-    public Data_Nascimento getNascimento() {
+    public Datanasc getNascimento() {
         return nascimento;
     }
 
-    public void setNascimento(Data_Nascimento nascimento) {
+    public void setNascimento(Datanasc nascimento) {
         this.nascimento = nascimento;
     }
 
