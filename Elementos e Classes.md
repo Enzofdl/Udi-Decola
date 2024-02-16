@@ -116,6 +116,8 @@ Trechos
   - [ ] Funcionários (Pode também ser cliente)
       - [ ] Nome
       - [ ] Construtor
+      - [ ] Data de Nascimento
+      - [ ] Endereço
       - [ ] CPF
       - [ ] Numero de Registro
       - [ ] Salario fixo
