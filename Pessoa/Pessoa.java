@@ -1,53 +1,61 @@
 package Pessoa;
-import  Utilitarios.Utilitario;
+import Utilitarios.Utilitario;
+import jdk.jshell.execution.Util;
 
 public class Pessoa {
-    private String nome;
-    private String CPF;
+    private String nome, CPF;
+    private Endereco endereco;
+    private Data_nv data_nascimento;
 
-    private Datanasc nascimento;
-
-    private Endereco end;
 
     public Pessoa()
     {
 
     }
-    public Pessoa(String nome, String CPF, int dia, int mes, int ano){
-        this.nome = nome;
+    public Pessoa(String nome, String CPF)
+    {
         if(Utilitario.validacpf(CPF)) this.CPF = CPF;
         else this.CPF = "";
-        Datanasc nascimento = new Datanasc(dia, mes, ano);
-    }
-    public String getCPF() {
-        return CPF;
-    }
-
-    public boolean setCPF(String CPF) {
-        return Utilitario.validacpf(CPF);
-    }
-
-    public void setNome(String nome) {
         this.nome = nome;
+    }
+
+    public Pessoa(String nome, String CPF, Endereco endereco, Data_nv data_nascimento)
+    {
+        this(nome, CPF);
+        this.endereco = endereco;
+        this.data_nascimento = data_nascimento;
     }
 
     public String getNome() {
         return nome;
     }
 
-    public Datanasc getNascimento() {
-        return nascimento;
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
-    public void setNascimento(Datanasc nascimento) {
-        this.nascimento = nascimento;
+    public String getCPF() {
+        return CPF;
     }
 
-    public Endereco getEnd() {
-        return end;
+    public void setCPF(String CPF) {
+        if(Utilitario.validacpf(CPF)) this.CPF = CPF;
+        else this.CPF = "";
     }
 
-    public void setEnd(Endereco end) {
-        this.end = end;
+    public Endereco getEndereco() {
+        return endereco;
+    }
+
+    public void setEndereco(Endereco endereco) {
+        this.endereco = endereco;
+    }
+
+    public Data_nv getData_nascimento() {
+        return data_nascimento;
+    }
+
+    public void setData_nascimento(Data_nv data_nascimento) {
+        this.data_nascimento = data_nascimento;
     }
 }
