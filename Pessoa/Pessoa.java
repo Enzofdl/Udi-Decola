@@ -1,6 +1,5 @@
 package Pessoa;
 import Utilitarios.Utilitario;
-import jdk.jshell.execution.Util;
 
 public class Pessoa {
     private String nome, CPF;
