@@ -1,5 +1,8 @@
 package Utilitarios;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class Utilitario {
 
 
@@ -36,6 +39,20 @@ public class Utilitario {
     public static boolean validaprecos(){return true;}
     public static boolean validasalario(){return true;}
     public static boolean validavoo(){return true;}
+    public static boolean validarEmail(String email) {
+        // Expressão regular para validar o formato do email
+        String regex = "^[a-zA-Z0-9_+&*-]+(?:\\.[a-zA-Z0-9_+&*-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,7}$";
+
+        // Compilar a expressão regular em um padrão
+        Pattern pattern = Pattern.compile(regex);
+
+        // Criar um objeto Matcher
+        Matcher matcher = pattern.matcher(email);
+
+        // Verificar se o email corresponde ao padrão
+        return matcher.matches();
+    }
+
 
 
 
