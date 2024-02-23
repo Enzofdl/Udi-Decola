@@ -39,7 +39,7 @@ public class Utilitario {
     public static boolean validaprecos(){return true;}
     public static boolean validasalario(){return true;}
     public static boolean validavoo(){return true;}
-    public static boolean validarEmail(String email) {
+    public static boolean validaemail(String email) {
         // Expressão regular para validar o formato do email
         String regex = "^[a-zA-Z0-9_+&*-]+(?:\\.[a-zA-Z0-9_+&*-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,7}$";
 

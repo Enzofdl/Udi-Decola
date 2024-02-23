@@ -126,7 +126,7 @@ Trechos
 
     
   - [ ] Clientes (Pode também ser funcionário)
-      - [ ] Construtor
+      - [X] Construtor
       - [X] Nome
       - [X] CPF
       - [X] Endereço de Cobrança
