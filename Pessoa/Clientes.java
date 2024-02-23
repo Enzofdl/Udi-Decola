@@ -12,7 +12,7 @@ public class Clientes extends Pessoa {
         this.data_cadastro = data_cadastro;
         if(Utilitario.validaemail(email))
         {
-            this.email = email
+            this.email = email;
         }
         else
         {
