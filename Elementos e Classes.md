@@ -127,13 +127,13 @@ Trechos
     
   - [ ] Clientes (Pode também ser funcionário)
       - [ ] Construtor
-      - [ ] Nome
-      - [ ] CPF
-      - [ ] Endereço de Cobrança
-      - [ ] Data de Nascimento
-      - [ ] Data de Cadastro
-      - [ ] Email
-      - [ ] VIP
+      - [X] Nome
+      - [X] CPF
+      - [X] Endereço de Cobrança
+      - [X] Data de Nascimento
+      - [X] Data de Cadastro
+      - [X] Email
+      - [X] VIP
       - [ ] Voos Futuros
       - [ ] Diárias Futuras
       - [ ] Histórico de Compras
