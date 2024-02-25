@@ -2,6 +2,8 @@ package Utilitarios;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import Voo.Voo;
+
 
 public class Utilitario {
 
@@ -38,7 +40,7 @@ public class Utilitario {
     public static boolean validaquarto(){return true;}
     public static boolean validaprecos(){return true;}
     public static boolean validasalario(){return true;}
-    public static boolean validavoo(){return true;}
+    public static boolean verificavoo(Voo a){return true;}
     public static boolean validaemail(String email) {
         // Expressão regular para validar o formato do email
         String regex = "^[a-zA-Z0-9_+&*-]+(?:\\.[a-zA-Z0-9_+&*-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,7}$";
@@ -54,8 +56,7 @@ public class Utilitario {
     }
 
 
-
-
-
-
+    public static boolean validavenda(Voo a, int quantidade) {
+        return true;
+    }
 }

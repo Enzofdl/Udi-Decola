@@ -40,7 +40,7 @@ public class Trechos {
     }
 
     public boolean novovoo(Voo a){
-        if(verificavoo(a)){
+        if(Utilitario.verificavoo(a)){
             futurosvoos.add(a);
             return true;
         }

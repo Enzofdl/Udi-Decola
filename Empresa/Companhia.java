@@ -2,22 +2,36 @@ package Empresa;
 
 import java.util.ArrayList;
 
+import Trecho.Trechos;
+
+import Utilitarios.Utilitario;
+import Voo.Voo;
+
+import Udidecola.udidecola;
+
 public class Companhia extends Super_Empresa {
 
 
-        ArrayList <Trechos> T = new ArrayList<Trechos>();
-        ArrayList <historico> H = new ArrayList<historico>();
+        private ArrayList <Trechos> T;
+        private ArrayList <Voo> H;
+
         private float desconto;
 
         public Companhia(String cnpj, String nome, String nomefantasia, String datacriacao){
             super(cnpj, nome, nomefantasia, datacriacao);
+            H = new ArrayList<Voo>();
+            T = new ArrayList<Trechos>();
         }
 
         public boolean venda(Voo A, int quantidade){ // ADICIONAR VERIFICADOR
-            faturamento += quantidade*A.getPreco();
-            taxa += quantidade*UdiDecola.Taxa;
+            if(!Utilitario.validavenda(A, quantidade)) return false;
+            float faturamento = getFaturamento()+ (quantidade*A.getPreco());
+            setFaturamento(faturamento);
+            float taxa = getTaxa() + (quantidade*UdiDecola.getTaxa());
+            setTaxa(taxa);
             AdicionarHistorico(A);
         }
+
 
         // public boolean NovoTrecho()
         // public boolean AlterarTrecho()
@@ -26,6 +40,8 @@ public class Companhia extends Super_Empresa {
         // public void MostrarTrechos()
         // public void AdicionarHistorico()
         // public void MostrarHistorico()
+
+
         public float consultafaturamento(){
             return getFaturamento();
         }
