@@ -14,15 +14,15 @@
       - [ ] Valida Voo
 
   - [ ] Aeroporto (Cogitar a implementação e vinculação da Classe Cidades)
-      - [ ] Construtor
-      - [ ] Nome
-      - [ ] Cidade
-      - [ ] Vetor de Trecho.Trechos
-      - [ ] Registrar Trecho
-      - [ ] Remover Trecho
-      - [ ] Alterar Trecho
-      - [ ] Buscar Trecho
-      - [ ] Visualizar Trecho.Trechos 
+      - [X] Construtor
+      - [X] Nome
+      - [X] Cidade
+      - [X] Vetor de Trecho.Trechos
+      - [X] Registrar Trecho
+      - [X] Remover Trecho
+      - [X] Alterar Trecho
+      - [X] Buscar Trecho
+      - [X] Visualizar Trecho.Trechos 
         
         
   - [ ] Companhia Aérea -> Enzo Faria
