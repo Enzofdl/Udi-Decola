@@ -59,13 +59,13 @@ Trechos
       - [X] Destino
 
   - [X] Superclasse empresa
-  - [ ] Trechos (Vinculado à aeroporto e companhia)
-      - [ ] Nome
-      - [ ] Construtor
-      - [ ] Origem
-      - [ ] Destino
-      - [ ] Voos Futuros
-      - [ ] Histórico de Voos
+  - [X] Trechos (Vinculado à aeroporto e companhia)
+      - [X] Nome
+      - [X] Construtor
+      - [X] Origem
+      - [X] Destino
+      - [X] Voos Futuros
+      - [X] Histórico de Voos
       - [X] Criar Trecho
       - [X] Encerrar Trecho
       
