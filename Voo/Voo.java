@@ -2,19 +2,23 @@ package Voo;
 
 import java.util.ArrayList;
 
+import java.util.Calendar;
+
+import java.util.Date;
+
 public class Voo {
     private float preco;
     private final Trecho trecho;
     private int qnt;
-    private String saida;
-    private String chegada;
-    private String horarioplanejado;
-    private String horarioconsumado;
+    private Date saida;
+    private Date chegada;
+    private Date horarioplanejado;
+    private Date horarioconsumado;
     private boolean ativo;
     private boolean confirmado;
 
 
-    public Voo(Trecho trecho, String saida, String chegada, String horarioplanejado){
+    public Voo(Trecho trecho, Date saida, Date chegada, Date horarioplanejado){
         this.trecho = trecho;
         this.saida = saida;
         this.chegada = chegada;
@@ -34,13 +38,16 @@ public class Voo {
         else return false;
         return true;
     }
+    
     public void cancelarvoo(){ativo = false;}
-    public void ConfirmaVoo(String horario){
+    
+    public void ConfirmaVoo(Date horario){
         ativo = false;
         horarioconsumado = horario;
         confirmado =  true;
     }
-    public void AlterarVoo(String datasaida, String datachegada, String horarioplanejado){
+    
+    public void AlterarVoo(Date datasaida, DAte datachegada, Date horarioplanejado){
         saida = datasaida;
         chegada = datachegada;
         this.horarioplanejado = horarioplanejado;
@@ -58,19 +65,19 @@ public class Voo {
         return qnt;
     }
 
-    public String getSaida() {
+    public Date getSaida() {
         return saida;
     }
 
-    public String getChegada() {
+    public Date getChegada() {
         return chegada;
     }
 
-    public String getHorarioplanejado() {
+    public Date getHorarioplanejado() {
         return horarioplanejado;
     }
 
-    public String getHorarioconsumado() {
+    public Date getHorarioconsumado() {
         return horarioconsumado;
     }
 
