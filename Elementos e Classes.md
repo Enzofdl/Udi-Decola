@@ -142,12 +142,12 @@ Trechos
       - [ ] Histórico de Pesquisas
 
   
-  - [ ] Pesquisas (Vincular ao cliente. Verificar possiveis outros vínculos)
-      - [ ] Data de Início
-      - [ ] Data Final
-      - [ ] Destino
-      - [ ] Origem
-      - [ ] Data e hora da pesquisa realizada
+  - [X] Pesquisas
+      - [X] Data de Início
+      - [X] Data Final
+      - [X] Destino
+      - [X] Origem
+      - [X] Data e hora da pesquisa realizada
 
    
   - [ ] Compra (Vinculada à trecho, companhia aerea/hotéis, cliente)
