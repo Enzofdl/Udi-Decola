@@ -125,7 +125,7 @@ Trechos
       - [X] Salario final
 
     
-  - [ ] Clientes (Pode também ser funcionário)
+  - [X] Clientes (Pode também ser funcionário)
       - [X] Construtor
       - [X] Nome
       - [X] CPF
@@ -134,12 +134,11 @@ Trechos
       - [X] Data de Cadastro
       - [X] Email
       - [X] VIP
-      - [ ] Voos Futuros
-      - [ ] Diárias Futuras
-      - [ ] Histórico de Compras
-      - [ ] Número de Compras
-      - [ ] Valor gasto
-      - [ ] Histórico de Pesquisas
+      - [X] Voos Futuros
+      - [X] Diárias Futuras
+      - [X] Histórico de Compras
+      - [X] Número de Compras
+      - [X] Valor gasto
 
   
   - [X] Pesquisas
