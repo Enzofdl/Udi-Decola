@@ -6,8 +6,7 @@ import Trecho.Trechos;
 
 import Utilitarios.Utilitario;
 import Voo.Voo;
-
-import Udidecola.udidecola;
+import UdiDecola.*;
 
 public class Companhia extends Super_Empresa {
 
@@ -23,29 +22,46 @@ public class Companhia extends Super_Empresa {
             T = new ArrayList<Trechos>();
         }
 
-        public boolean venda(Voo A, int quantidade){ // ADICIONAR VERIFICADOR
+        public boolean venda(Voo A, int quantidade){
+            // ADICIONAR VERIFICADOR
             if(!Utilitario.validavenda(A, quantidade)) return false;
             float faturamento = getFaturamento()+ (quantidade*A.getPreco());
             setFaturamento(faturamento);
-            float taxa = getTaxa() + (quantidade*UdiDecola.getTaxa());
+            double taxa = getTaxa() + (quantidade*(UdiDecola.getTaxa()));
             setTaxa(taxa);
             AdicionarHistorico(A);
+            return true;
         }
 
 
-        // public boolean NovoTrecho()
-        // public boolean AlterarTrecho()
-        // public boolean ApagarTrecho()
-        // public Trecho BuscarTrecho()
-        // public void MostrarTrechos()
-        // public void AdicionarHistorico()
-        // public void MostrarHistorico()
+         public void NovoTrecho(Trechos a){
+            T.add(a);
+     }
+         public void AlterarTrecho(Trechos antigo, Trechos novo) {
+            T.set(T.indexOf(antigo), novo);
+         }
+        public void ApagarTrecho(Trechos a){
+            T.remove(a);
+        }
+        public boolean BuscarTrecho(Trechos a){
+            return T.contains(a);
+        }
+        public Trechos BuscarTrecho(int a){
+            return T.get(a);
+        }
+        public ArrayList<Trechos> getTrechos(){
+            return T;
+        }
+
+        public ArrayList<Voo> retornaHistorico(){
+            return H;
+        }
 
 
         public float consultafaturamento(){
             return getFaturamento();
         }
-        public float consultataxa(){
+        public double consultataxa(){
             return getTaxa();
         }
         public boolean alteradesconto(float desconto){
@@ -58,27 +74,19 @@ public class Companhia extends Super_Empresa {
             return getDesconto();
         }
 
-        public Trechos[] getT() {
+        public ArrayList<Trechos> getT() {
             return T;
         }
 
-        public void setT(Trechos[] t) {
-            T = t;
+        public void AdicionarHistorico(Voo historico) {
+            H.add(historico);
         }
 
-        public Voo[] getHistorico() {
-            return historico;
-        }
-
-        public void setHistorico(Voo[] historico) {
-            this.historico = historico;
-        }
-
-        public int getDesconto() {
+        public float getDesconto() {
             return desconto;
         }
 
-        public void setDesconto(int desconto) {
+        public void setDesconto(float desconto) {
             this.desconto = desconto;
         }
 
