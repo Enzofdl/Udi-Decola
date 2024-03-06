@@ -2,17 +2,16 @@ package Empresa;
 
 public class Quartos {
 
-  public boolean disponivel;
+  public boolean reservado;
   public int capacidade;
   public Tempo checkIn;
   public Tempo checkOut;
-  public boolean cancelamento;
   public float desconto;
   public float preco;
   public boolean luxo;
 
-  public Quartos(boolean disponivel, int capacidade, boolean cancelamento, float preco, boolean luxo) {
-    this.disponivel = disponivel;
+  public Quartos(boolean reservado, int capacidade, boolean cancelamento, float preco, boolean luxo) {
+    this.reservado = reservado;
     this.capacidade = capacidade;
     this.cancelamento = cancelamento;
     this.preco = preco;
@@ -26,12 +25,8 @@ public class Quartos {
     this.checkOut = checkOut;
   }
 
-  public boolean getDisponivel() {
-    return disponivel;
-  }
-
-  public void setDisponivel(boolean disponivel) {
-    this.disponivel = disponivel;
+  public boolean getReservado() {
+    return reservado;
   }
 
   public int getCapacidade() {
@@ -57,14 +52,6 @@ public class Quartos {
 
   public void setCheckIn(Tempo checkIn) {
     this.checkIn = checkIn;
-  }
-
-  public boolean getCancelamento() {
-    return cancelamento;
-  }
-
-  public void setCancelamento(boolean cancelamento) {
-    this.cancelamento = cancelamento;
   }
 
   public float getPreco() {
@@ -96,6 +83,14 @@ public class Quartos {
 
   public float aplicaDesconto(float preco, float desconto) {
     return (preco - desconto);
+  }
+
+  public void reservar(){
+    reservado = true;
+  }
+
+  public void cancelar(){
+    reservado = false;
   }
 
 }
