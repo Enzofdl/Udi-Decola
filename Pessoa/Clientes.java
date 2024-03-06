@@ -66,4 +66,20 @@ public class Clientes extends Pessoa {
     public void setVIP(boolean VIP) {
         this.VIP = VIP;
     }
+
+    public int getNumero_compras() {
+        return numero_compras;
+    }
+
+    public void setNumero_compras(int numero_compras) {
+        this.numero_compras = numero_compras;
+    }
+
+    public double getValor_gasto() {
+        return valor_gasto;
+    }
+
+    public void setValor_gasto(double valor_gasto) {
+        this.valor_gasto = valor_gasto;
+    }
 }
