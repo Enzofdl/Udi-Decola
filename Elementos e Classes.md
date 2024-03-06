@@ -113,16 +113,16 @@ Trechos
       - [ ]  Descontos Para VIPS
 
   
-  - [ ] Funcionários (Pode também ser cliente)
-      - [ ] Nome
-      - [ ] Construtor
-      - [ ] Data de Nascimento
-      - [ ] Endereço
-      - [ ] CPF
-      - [ ] Numero de Registro
-      - [ ] Salario fixo
-      - [ ] Hoteis Gerenciados
-      - [ ] Salario final
+  - [X] Funcionários (Pode também ser cliente)
+      - [X] Nome
+      - [X] Construtor
+      - [X] Data de Nascimento
+      - [X] Endereço
+      - [X] CPF
+      - [X] Numero de Registro
+      - [X] Salario fixo
+      - [X] Hoteis Gerenciados
+      - [X] Salario final
 
     
   - [ ] Clientes (Pode também ser funcionário)
