@@ -149,18 +149,17 @@ Trechos
       - [X] Data e hora da pesquisa realizada
 
    
-  - [ ] Compra (Vinculada à trecho, companhia aerea/hotéis, cliente)
-      - [ ] Voo
-      - [ ] Valor Pago
-      - [ ] Valor da Companhia (Se houver)
-      - [ ] Valor do Aplicativo
-      - [ ] Valor do Hotel (Se houver)
-      - [ ] Diárias em Hotel (Pensar em SubClasse)
-      - [ ] Quantidades de diárias, voos e etc.
-      - [ ] Data e Hora da Compra
-      - [ ] Método de Pagamento
-      - [ ] Atualizar Nro de compras do cliente
-      - [ ] Compra VIP ou não
+  - [X] Compra (Vinculada à trecho, companhia aerea/hotéis, cliente)
+      - [X] Voo
+      - [X] Valor Pago
+      - [X] Valor da Companhia (Se houver)
+      - [X] Valor do Aplicativo
+      - [X] Valor do Hotel (Se houver)
+      - [X] Quantidades de diárias, voos e etc.
+      - [X] Data e Hora da Compra
+      - [X] Método de Pagamento
+      - [X] Atualizar Nro de compras do cliente
+      - [X] Compra VIP ou não
        
   
   - [ ] UdiDecola (Vinculada a todas as outras classes)
