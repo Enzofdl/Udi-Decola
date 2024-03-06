@@ -5,7 +5,7 @@ public class Super_Empresa {
     private final String nome;
     private String nomefantasia;
     private float faturamento;
-    private float taxa;
+    private double taxa;
     private final String datacriacao;
 
     public Super_Empresa(String cnpj, String nome, String nomefantasia, String datacriacao){
@@ -39,11 +39,11 @@ public class Super_Empresa {
         this.faturamento = faturamento;
     }
 
-    public float getTaxa() {
+    public double getTaxa() {
         return taxa;
     }
 
-    public void setTaxa(float taxa) {
+    public void setTaxa(double taxa) {
         this.taxa = taxa;
     }
 
