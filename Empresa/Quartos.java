@@ -27,7 +27,7 @@ public class Quartos {
     this(disponivel, capacidade, cancelamento, preco, luxo);
     this.checkIn = checkIn;
     this.checkOut = checkOut;
-  }
+  } /////////////////////////////////////////////////
 
   public boolean getReservado() {
     return reservado;
