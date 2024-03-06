@@ -110,16 +110,16 @@ Trechos
       - [ ]  Descontos Para VIPS
 
   
-  - [ ] Funcionários (Pode também ser cliente)
-      - [ ] Nome
-      - [ ] Construtor
-      - [ ] Data de Nascimento
-      - [ ] Endereço
-      - [ ] CPF
-      - [ ] Numero de Registro
-      - [ ] Salario fixo
-      - [ ] Hoteis Gerenciados
-      - [ ] Salario final
+  - [X] Funcionários (Pode também ser cliente)
+      - [X] Nome
+      - [X] Construtor
+      - [X] Data de Nascimento
+      - [x] Endereço
+      - [x] CPF
+      - [x] Numero de Registro
+      - [x] Salario fixo
+      - [X] Hoteis Gerenciados
+      - [x] Salario final
 
     
   - [ ] Clientes (Pode também ser funcionário)
@@ -131,12 +131,12 @@ Trechos
       - [X] Data de Cadastro
       - [X] Email
       - [X] VIP
-      - [ ] Voos Futuros
-      - [ ] Diárias Futuras
-      - [ ] Histórico de Compras
-      - [ ] Número de Compras
-      - [ ] Valor gasto
-      - [ ] Histórico de Pesquisas
+      - [X] Voos Futuros
+      - [X] Diárias Futuras
+      - [X] Histórico de Compras
+      - [X] Número de Compras
+      - [X] Valor gasto
+      - [X] Histórico de Pesquisas
 
   
   - [X] Pesquisas
@@ -147,26 +147,26 @@ Trechos
       - [X] Data e hora da pesquisa realizada
 
    
-  - [ ] Compra (Vinculada à trecho, companhia aerea/hotéis, cliente)
-      - [ ] Voo
-      - [ ] Valor Pago
-      - [ ] Valor da Companhia (Se houver)
-      - [ ] Valor do Aplicativo
-      - [ ] Valor do Hotel (Se houver)
-      - [ ] Diárias em Hotel (Pensar em SubClasse)
-      - [ ] Quantidades de diárias, voos e etc.
-      - [ ] Data e Hora da Compra
-      - [ ] Método de Pagamento
-      - [ ] Atualizar Nro de compras do cliente
-      - [ ] Compra VIP ou não
+  - [x] Compra (Vinculada à trecho, companhia aerea/hotéis, cliente)
+      - [x] Voo
+      - [x] Valor Pago
+      - [x] Valor da Companhia (Se houver)
+      - [x] Valor do Aplicativo
+      - [x] Valor do Hotel (Se houver)
+      - [x] Diárias em Hotel (Pensar em SubClasse)
+      - [X] Quantidades de diárias, voos e etc.
+      - [X] Data e Hora da Compra
+      - [X] Método de Pagamento
+      - [X] Atualizar Nro de compras do cliente
+      - [X] Compra VIP ou não
        
   
-  - [ ] UdiDecola (Vinculada a todas as outras classes)
-      - [ ] Funcionários
-      - [ ] Faturamento Total
-      - [ ] Métodos para administrar/moderar todas as classes
-      - [ ] Sócios
-      - [ ] Faturamento mensal (opcional)
+  - [X] UdiDecola (Vinculada a todas as outras classes)
+      - [X] Funcionários
+      - [X] Faturamento Total
+      - [ ] Métodos para administrar/moderar todas as classes -> CONSIDERAR
+      - [X] Sócios
+      - [X] Faturamento mensal (opcional)
    
   - [ ] Pensar em classe adicional para ser implementada.
 
