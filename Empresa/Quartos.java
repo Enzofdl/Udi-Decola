@@ -1,11 +1,15 @@
 package Empresa;
 
+import java.util.Calendar;
+
+import java.util.Date;
+
 public class Quartos {
 
   public boolean reservado;
   public int capacidade;
-  public Tempo checkIn;
-  public Tempo checkOut;
+  public Date checkIn;
+  public Date checkOut;
   public float desconto;
   public float preco;
   public boolean luxo;
@@ -18,8 +22,8 @@ public class Quartos {
     this.luxo = luxo;
   }
 
-  public Quartos(boolean disponivel, int capacidade, boolean cancelamento, float preco, boolean luxo, Tempo checkIn,
-      Tempo checkOut) {
+  public Quartos(boolean disponivel, int capacidade, boolean cancelamento, float preco, boolean luxo, Date checkIn,
+      Date checkOut) {
     this(disponivel, capacidade, cancelamento, preco, luxo);
     this.checkIn = checkIn;
     this.checkOut = checkOut;
@@ -37,20 +41,20 @@ public class Quartos {
     this.capacidade = capacidade;
   }
 
-  public Tempo getCheckOut() {
+  public Date getCheckOut() {
     return checkOut;
   }
 
-  public void setCheckOut(Tempo checkOut) {
+  public void setCheckOut(Date checkOut) {
     if(checkOut.getHora() > checkIn.getHora() || (checkOut.getHora() == checkIn.getHora() && checkOut.getMin() > checkIn.getMin())) this.checkOut = checkOut; 
     //Não permite Check Out antes do Check In
   }
 
-  public Tempo getCheckIn() {
+  public Date getCheckIn() {
     return checkIn;
   }
 
-  public void setCheckIn(Tempo checkIn) {
+  public void setCheckIn(Date checkIn) {
     this.checkIn = checkIn;
   }
 
