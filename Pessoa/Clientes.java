@@ -1,5 +1,7 @@
 package Pessoa;
 import Utilitarios.Utilitario;
+import Voo.Voo;
+import Compras.compras;
 
 import java.util.ArrayList;
 
@@ -12,7 +14,7 @@ public class Clientes extends Pessoa {
     private ArrayList <Diarias> diarias_futuras;
     private ArrayList <Compras> historico_compras;
     
-    public Clientes(String nome, String CPF, Data_nv data_nasc, Endereco end, String data_cadastro, String email, boolean VIP, int numero_compras, double valor_gasto)
+    public Clientes(String nome, String CPF, Data_nv data_nasc, Endereco end, String data_cadastro, String email, boolean VIP,)
     {
         super(nome, CPF, end,data_nasc);
         this.data_cadastro = data_cadastro;
@@ -26,8 +28,8 @@ public class Clientes extends Pessoa {
         }
         this.data_cadastro = data_cadastro;
         this.VIP = VIP;
-        this.numero_compras = numero_compras;
-        this.valor_gasto = valor_gasto;
+        this.numero_compras = 0;
+        this.valor_gasto = 0;
         voos_futuros = new ArrayList<Voo>();
         diarias_futuras = new ArrayList<Diarias>();
         historico_compras = new ArrayList<Compras>();
@@ -68,8 +70,9 @@ public class Clientes extends Pessoa {
         return numero_compras;
     }
 
-    public void setNumero_compras(int numero_compras) {
-        this.numero_compras = numero_compras;
+    public void compraFeita()
+    {
+        numero_compras++;
     }
 
     public double getValor_gasto() {
