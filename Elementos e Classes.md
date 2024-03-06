@@ -25,29 +25,26 @@
       - [X] Visualizar Trecho.Trechos 
         
         
-  - [ ] Companhia Aérea -> Enzo Faria
+  - [X] Companhia Aérea -> Enzo Faria
       - [X] Construtor
       - [X] CNPJ
       - [X] Nome Oficial
       - [X] Nome Fantasia
-          - [ ] Altera nome fantasia 
       - [x] Faturamento
           - [ ] Vincular à classe Voo 
       - [X] Quanto deve pagar ao APP
           - [ ] Vincular à classe Voo para calculo da taxa
           - [ ] Vincular ao atributo estático TAXA da Classe UdiDecola 
       - [X] Data de Criação
-      - [X] Alteração de nome fantasia
-          - [ ] Método de Alteração 
       - [X] Trecho.Trechos
-          - [ ] // public boolean NovoTrecho()
-          - [ ] // public boolean AlterarTrecho()
-          - [ ] // public boolean ApagarTrecho()
-          - [ ] // public Trecho BuscarTrecho()
-          - [ ] // public void MostrarTrechos()
+          - [X] // public boolean NovoTrecho()
+          - [X] // public boolean AlterarTrecho()
+          - [X] // public boolean ApagarTrecho()
+          - [X] // public Trecho BuscarTrecho()
+          - [X] // public void MostrarTrechos()
       - [X] Histórico de voos
-          - [ ] // public void AdicionarHistorico()
-          - [ ] // public void MostrarHistorico()
+          - [X] // public void AdicionarHistorico()
+          - [X] // public void MostrarHistorico()
       - [X] Descontos para VIPS
        
 Trechos
@@ -113,19 +110,19 @@ Trechos
       - [ ]  Descontos Para VIPS
 
   
-  - [X] Funcionários (Pode também ser cliente)
-      - [X] Nome
-      - [X] Construtor
-      - [X] Data de Nascimento
-      - [X] Endereço
-      - [X] CPF
-      - [X] Numero de Registro
-      - [X] Salario fixo
-      - [X] Hoteis Gerenciados
-      - [X] Salario final
+  - [ ] Funcionários (Pode também ser cliente)
+      - [ ] Nome
+      - [ ] Construtor
+      - [ ] Data de Nascimento
+      - [ ] Endereço
+      - [ ] CPF
+      - [ ] Numero de Registro
+      - [ ] Salario fixo
+      - [ ] Hoteis Gerenciados
+      - [ ] Salario final
 
     
-  - [X] Clientes (Pode também ser funcionário)
+  - [ ] Clientes (Pode também ser funcionário)
       - [X] Construtor
       - [X] Nome
       - [X] CPF
@@ -134,11 +131,12 @@ Trechos
       - [X] Data de Cadastro
       - [X] Email
       - [X] VIP
-      - [X] Voos Futuros
-      - [X] Diárias Futuras
-      - [X] Histórico de Compras
-      - [X] Número de Compras
-      - [X] Valor gasto
+      - [ ] Voos Futuros
+      - [ ] Diárias Futuras
+      - [ ] Histórico de Compras
+      - [ ] Número de Compras
+      - [ ] Valor gasto
+      - [ ] Histórico de Pesquisas
 
   
   - [X] Pesquisas
@@ -149,17 +147,18 @@ Trechos
       - [X] Data e hora da pesquisa realizada
 
    
-  - [X] Compra (Vinculada à trecho, companhia aerea/hotéis, cliente)
-      - [X] Voo
-      - [X] Valor Pago
-      - [X] Valor da Companhia (Se houver)
-      - [X] Valor do Aplicativo
-      - [X] Valor do Hotel (Se houver)
-      - [X] Quantidades de diárias, voos e etc.
-      - [X] Data e Hora da Compra
-      - [X] Método de Pagamento
-      - [X] Atualizar Nro de compras do cliente
-      - [X] Compra VIP ou não
+  - [ ] Compra (Vinculada à trecho, companhia aerea/hotéis, cliente)
+      - [ ] Voo
+      - [ ] Valor Pago
+      - [ ] Valor da Companhia (Se houver)
+      - [ ] Valor do Aplicativo
+      - [ ] Valor do Hotel (Se houver)
+      - [ ] Diárias em Hotel (Pensar em SubClasse)
+      - [ ] Quantidades de diárias, voos e etc.
+      - [ ] Data e Hora da Compra
+      - [ ] Método de Pagamento
+      - [ ] Atualizar Nro de compras do cliente
+      - [ ] Compra VIP ou não
        
   
   - [ ] UdiDecola (Vinculada a todas as outras classes)
