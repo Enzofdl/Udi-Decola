@@ -13,7 +13,7 @@
       - [ ] Valida Salario
       - [ ] Valida Voo
 
-  - [ ] Aeroporto (Cogitar a implementação e vinculação da Classe Cidades)
+  - [X] Aeroporto (Cogitar a implementação e vinculação da Classe Cidades)
       - [X] Construtor
       - [X] Nome
       - [X] Cidade
