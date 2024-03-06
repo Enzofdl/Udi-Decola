@@ -1,12 +1,21 @@
 package Pessoa;
 import Utilitarios.Utilitario;
+
+import java.util.ArrayList;
+
 public class Clientes extends Pessoa {
     private String data_cadastro, email;
     private boolean VIP;
+    private int numero_compras;
+    private double valor_gasto;
+    private ArrayList <Voo> voos_futuros;
+    private ArrayList <Diarias> diarias_futuras;
+    private ArrayList <Compras> historico_compras;
+
 
     public Clientes(){
     }
-    public Clientes(String nome, String CPF, Data_nv data_nasc, Endereco end, String data_cadastro, String email, boolean VIP)
+    public Clientes(String nome, String CPF, Data_nv data_nasc, Endereco end, String data_cadastro, String email, boolean VIP, int numero_compras, double valor_gasto)
     {
         super(nome, CPF, end,data_nasc);
         this.data_cadastro = data_cadastro;
@@ -20,6 +29,11 @@ public class Clientes extends Pessoa {
         }
         this.data_cadastro = data_cadastro;
         this.VIP = VIP;
+        this.numero_compras = numero_compras;
+        this.valor_gasto = valor_gasto;
+        voos_futuros = new ArrayList<Voo>();
+        diarias_futuras = new ArrayList<Diarias>();
+        historico_compras = new ArrayList<Compras>();
     }
 
     public String getEmail() {
@@ -52,10 +66,4 @@ public class Clientes extends Pessoa {
     public void setVIP(boolean VIP) {
         this.VIP = VIP;
     }
-
-
-
-
-
-
 }
