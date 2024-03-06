@@ -11,10 +11,7 @@ public class Clientes extends Pessoa {
     private ArrayList <Voo> voos_futuros;
     private ArrayList <Diarias> diarias_futuras;
     private ArrayList <Compras> historico_compras;
-
-
-    public Clientes(){
-    }
+    
     public Clientes(String nome, String CPF, Data_nv data_nasc, Endereco end, String data_cadastro, String email, boolean VIP, int numero_compras, double valor_gasto)
     {
         super(nome, CPF, end,data_nasc);
