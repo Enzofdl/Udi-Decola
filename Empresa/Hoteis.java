@@ -7,18 +7,18 @@ public class Hoteis extends Super_Empresa {
   private float avaliacao;
   private boolean pets;
   private int numeroquartos;
-  ArrayList<Quartos> locacao = new ArrayList<Quartos>();
+  ArrayList<Quartos> quartos = new ArrayList<Quartos>();
   private String descricao;
   private String mensagem;
-  ArrayList<Tipo_Quarto> tiposQuartos = new ArrayList<Tipo_Quarto>();
+
 
   public Hoteis(String cnpj, String nome, String nomefantasia, String datacriacao, String endereco, float avaliacao,
-      boolean pets, int numeroquartos) {
+      boolean pets) {
     super(cnpj, nome, nomefantasia, datacriacao);
     this.endereco = endereco;
     this.avaliacao = avaliacao;
     this.pets = pets;
-    this.numeroquartos = numeroquartos;
+    this.numeroquartos = 0;
   }
 
   public String getEndereco() {
@@ -76,6 +76,14 @@ public class Hoteis extends Super_Empresa {
   public void novaMensagem(String mensagem) {
     this.mensagem = mensagem;
   }
+
+  public void adicionarquarto (Quartos a){
+    quartos.add(a);
+  }
+  public void removequarto(Quartos a){
+    quartos.remove(a);
+  }
+
 
 }
 

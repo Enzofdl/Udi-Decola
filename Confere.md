@@ -1,6 +1,6 @@
-- [ ] Aeroporto
-- [ ] Compras
-- [ ] Companhia
+- [X] Aeroporto
+- [X] Compras
+- [X] Companhia
 - [ ] Hoteis
 - [ ] Quartos
 - [ ] Super Classe Empresa

@@ -1,5 +1,7 @@
 package Empresa;
 
+import UdiDecola.UdiDecola;
+
 public class Super_Empresa {
     private final String cnpj;
     private final String nome;
@@ -13,6 +15,7 @@ public class Super_Empresa {
         this.nome = nome;
         this.nomefantasia = nomefantasia;
         this.datacriacao = datacriacao;
+        taxa = UdiDecola.getTaxa();
     }
 
     public String getCnpj() {
