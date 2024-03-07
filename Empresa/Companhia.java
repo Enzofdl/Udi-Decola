@@ -23,6 +23,9 @@ public class Companhia extends Super_Empresa {
         }
 
         public boolean venda(Voo A, int quantidade){
+            if(A.getQuantidade() <= 0) return false;
+
+            A.reduzQuantidade();
             float faturamento = getFaturamento()+ (quantidade*A.getPreco());
             setFaturamento(faturamento);
             double taxa = getTaxa() + (quantidade*(UdiDecola.getTaxa()));

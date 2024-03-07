@@ -3,7 +3,7 @@ import java.util.ArrayList;
 import Empresa.Hoteis;
 
 public class Funcionario_resp extends Funcionarios{
-    private ArrayList<Hoteis> cadastrados = new ArrayList<>(); //referencia a quantidad de hoteis cadastrados pelo funcionario
+    private ArrayList<Hoteis> cadastrados = new ArrayList<Hoteis>(); //referencia a quantidad de hoteis cadastrados pelo funcionario
     private static double comissao = 100; //Quanto ele ganha por hotel cadastrado (100 eh a comissao base, pode ser mudado depois)
 
     public Funcionario_resp(String nome, String CPF, Data_nv data_nasc, Endereco end, String numero_carteira, double salario)

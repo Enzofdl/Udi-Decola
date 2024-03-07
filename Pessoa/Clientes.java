@@ -13,7 +13,12 @@ public class Clientes extends Pessoa {
     private double valor_gasto;
     private ArrayList <Voo> voos_futuros;
     private ArrayList <Compras> historico_compras;
-    
+
+
+    public Clientes()
+    {
+
+    }
     public Clientes(String nome, String CPF, Data_nv data_nasc, Endereco end, Data_nv data_cadastro, String email)
     {
         super(nome, CPF, end,data_nasc);
@@ -60,6 +65,11 @@ public class Clientes extends Pessoa {
         historico_compras.add(a);
         valor_gasto += a.getValor_pago();
         numero_compras++;
+
+        if(historico_compras.size() == 15)
+        {
+            VIP = true;
+        }
     }
 
     public double getValor_gasto() {

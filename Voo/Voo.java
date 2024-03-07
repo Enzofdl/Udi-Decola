@@ -16,18 +16,20 @@ public class Voo {
     private Data_nv saida;
     private Data_nv chegada;
     private Data_nv horarioplanejado;
+    private int quantidade;
     private Data_nv horarioconsumado;
     private boolean ativo;
     private boolean confirmado;
 
 
-    public Voo(Trechos trecho, Data_nv saida, Data_nv chegada, Data_nv horarioplanejado){
+    public Voo(Trechos trecho, Data_nv saida, Data_nv chegada, Data_nv horarioplanejado, int quantidade){
         this.trecho = trecho;
         this.saida = saida;
         this.chegada = chegada;
         this.horarioplanejado = horarioplanejado;
         ativo = true;
         confirmado = false;
+        this.quantidade = quantidade;
     }
     public boolean alterapreco(float preco){
         if (preco>0) this.preco = preco;
@@ -47,6 +49,11 @@ public class Voo {
         saida = datasaida;
         chegada = datachegada;
         this.horarioplanejado = horarioplanejado;
+    }
+
+    public void reduzQuantidade()
+    {
+        this.quantidade -= 1;
     }
 
     public float getPreco() {
@@ -79,5 +86,13 @@ public class Voo {
 
     public boolean isConfirmado() {
         return confirmado;
+    }
+
+    public int getQuantidade() {
+        return quantidade;
+    }
+
+    public void setQuantidade(int quantidade) {
+        this.quantidade = quantidade;
     }
 }
