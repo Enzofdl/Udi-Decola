@@ -23,8 +23,6 @@ public class Companhia extends Super_Empresa {
         }
 
         public boolean venda(Voo A, int quantidade){
-            // ADICIONAR VERIFICADOR
-            if(!Utilitario.validavenda(A, quantidade)) return false;
             float faturamento = getFaturamento()+ (quantidade*A.getPreco());
             setFaturamento(faturamento);
             double taxa = getTaxa() + (quantidade*(UdiDecola.getTaxa()));

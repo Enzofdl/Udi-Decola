@@ -33,10 +33,6 @@ public class Funcionario_resp extends Funcionarios{
         return cadastrados;
     }
 
-    public void setCadastrados(ArrayList<Hoteis> cadastrados) {
-        this.cadastrados = cadastrados;
-    }
-
     public static double getComissao() {
         return comissao;
     }

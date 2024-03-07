@@ -34,6 +34,27 @@ public class Utilitario {
         if((prim == (CPF.charAt(9) - '0')) && (seg == (CPF.charAt(10) - '0'))) return true;
         return false;
     }
+
+    public static boolean validaIdentif(String Identificador)
+    {
+        if(Identificador.length() !=5) return false;
+        if((Identificador.charAt(0) < '0') || (Identificador.charAt(1) < '0') || (Identificador.charAt(2) < '0'))
+        {
+            return false;
+        }
+        else if((Identificador.charAt(0) > '9') || (Identificador.charAt(1) > '9') || (Identificador.charAt(2) > '9'))
+        {
+            return false;
+        }
+        for(int i = 3; i < 5; i++)
+        {
+            if((Identificador.charAt(i) > '0') && (Identificador.charAt(i) < '9')) return false;
+        }
+        return true;
+
+    }
+
+    /*
     public static boolean validadata(){return true;}
     public static boolean validahorario(){return true;}
     public static boolean validaendereco(){return true;}
@@ -41,6 +62,7 @@ public class Utilitario {
     public static boolean validaprecos(){return true;}
     public static boolean validasalario(){return true;}
     public static boolean verificavoo(Voo a){return true;}
+    */
     public static boolean validaemail(String email) {
         // Expressão regular para validar o formato do email
         String regex = "^[a-zA-Z0-9_+&*-]+(?:\\.[a-zA-Z0-9_+&*-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,7}$";
@@ -56,7 +78,8 @@ public class Utilitario {
     }
 
 
+    /*
     public static boolean validavenda(Voo a, int quantidade) {
         return true;
-    }
+    }*/
 }
