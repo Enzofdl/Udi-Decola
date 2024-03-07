@@ -2,6 +2,7 @@ package Compras;
 import UdiDecola.UdiDecola;
 import Voo.Voo;
 import Pessoa.Clientes;
+import Empresa.Tempo;
 public class Compras
 {
     private Voo voo;
@@ -16,6 +17,7 @@ public class Compras
 
     public Compras() {
     }
+
 
     public Compras(Voo voo, Clientes a, double valor_pago, int valor_hotel, int valor_aplicativo, String metodo_pagamento, boolean VIP, Tempo horario_compra, int valor_companhia)
     {
