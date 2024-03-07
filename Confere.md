@@ -1,18 +1,18 @@
 - [X] Aeroporto
 - [X] Compras
 - [X] Companhia
-- [ ] Hoteis
-- [ ] Quartos
-- [ ] Super Classe Empresa
-- [ ] Tempo
-- [ ] Pesquisa
-- [ ] Clientes
-- [ ] Data_nv
-- [ ] Endereco
-- [ ] Funcionario_resp
-- [ ] Funcionarios
-- [ ] Pessoa
+- [X] Hoteis
+- [X] Quartos
+- [X] Super Classe Empresa
+- [X] Tempo
+- [X] Pesquisa
+- [X] Clientes
+- [X] Data_nv
+- [X] Endereco
+- [X] Funcionario_resp
+- [X] Funcionarios
+- [X] Pessoa
 - [ ] Trechos
-- [ ] UdiDecola
+- [X] UdiDecola
 - [ ] Utilitario
-- [ ] Voo
+- [X] Voo

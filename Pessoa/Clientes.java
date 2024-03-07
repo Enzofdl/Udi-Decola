@@ -1,37 +1,29 @@
 package Pessoa;
 import Utilitarios.Utilitario;
 import Voo.Voo;
-import Compras.compras;
+import Compras.Compras;
 
 import java.util.ArrayList;
 
 public class Clientes extends Pessoa {
-    private String data_cadastro, email;
+    private String email;
+    private Data_nv data_cadastro;
     private boolean VIP;
     private int numero_compras;
     private double valor_gasto;
     private ArrayList <Voo> voos_futuros;
-    private ArrayList <Diarias> diarias_futuras;
     private ArrayList <Compras> historico_compras;
     
-    public Clientes(String nome, String CPF, Data_nv data_nasc, Endereco end, String data_cadastro, String email, boolean VIP,)
+    public Clientes(String nome, String CPF, Data_nv data_nasc, Endereco end, String data_cadastro, String email)
     {
         super(nome, CPF, end,data_nasc);
         this.data_cadastro = data_cadastro;
-        if(Utilitario.validaemail(email))
-        {
-            this.email = email;
-        }
-        else
-        {
-            this.email = "";
-        }
+        this.email = email;
         this.data_cadastro = data_cadastro;
-        this.VIP = VIP;
+        this.VIP = false;
         this.numero_compras = 0;
         this.valor_gasto = 0;
         voos_futuros = new ArrayList<Voo>();
-        diarias_futuras = new ArrayList<Diarias>();
         historico_compras = new ArrayList<Compras>();
     }
 
@@ -47,19 +39,12 @@ public class Clientes extends Pessoa {
         return data_cadastro;
     }
 
-    public void setData_cadastro(String data_cadastro) {
+    public void setData_cadastro(Data_nv data_cadastro) {
         this.data_cadastro = data_cadastro;
     }
 
     public void setEmail(String email) {
-        if(Utilitario.validaemail(email))
-        {
             this.email = email;
-        }
-        else
-        {
-            this.email = "";
-        }
     }
 
     public void setVIP(boolean VIP) {
@@ -70,8 +55,10 @@ public class Clientes extends Pessoa {
         return numero_compras;
     }
 
-    public void compraFeita()
+    public void compraFeita(Compras a)
     {
+        historico_compras.add(a);
+        valor_gasto += a.getValor_pago();
         numero_compras++;
     }
 

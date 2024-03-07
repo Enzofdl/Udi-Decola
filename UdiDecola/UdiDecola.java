@@ -1,14 +1,14 @@
 package UdiDecola;
 
 import Pessoa.Funcionarios;
-import Pessoa.Pessoa;
+import Pessoa.*;
 
 import java.util.ArrayList;
 
 public class UdiDecola {
 
-  private static final String cnpj = "123123";
-  private static ArrayList <Funcionarios> funcionarios = new ArrayList<Funcionarios>();
+  private static final String cnpj = "50.573.639/0001-34";
+  private static ArrayList <Pessoa> funcionarios = new ArrayList<Pessoa>();
   private static double Faturamento = 0;
   private static ArrayList <Pessoa> socios =  new ArrayList<Pessoa>();
 
@@ -16,13 +16,13 @@ public class UdiDecola {
 
   // private static double FaturamentoMensal; // CONSIDERAR IMPLEMENTAÇÃO
 
-  public static void contratafuncionario(Funcionarios a){
+  public static void contratafuncionario(Pessoa a){
     funcionarios.add(a);
   }
-  public static void demitefuncionario(Funcionarios a){
+  public static void demitefuncionario(Pessoa a){
     funcionarios.remove(a);
   }
-  public static ArrayList<Funcionarios> getFuncionarios(){
+  public static ArrayList<Pessoa> getFuncionarios(){
     return funcionarios;
   }
   public static void CobraTaxa(double taxa){
@@ -31,6 +31,11 @@ public class UdiDecola {
   public static double getFaturamento(){
     return Faturamento;
   }
+
+  public static void setFaturamento(double faturamento) {
+    Faturamento = faturamento;
+  }
+
   public static ArrayList <Pessoa> getSocios(){
     return socios;
   }

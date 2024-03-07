@@ -33,6 +33,14 @@ public class Quartos {
   }
 
 
+  public boolean isReservado() {
+    return reservado;
+  }
+
+  public void setReservado(boolean reservado) {
+    this.reservado = reservado;
+  }
+
   public void CheckOut() {
     reservado = false;
     checkin.setHora(0);

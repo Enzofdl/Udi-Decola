@@ -1,5 +1,9 @@
 package Empresa;
 
+import UdiDecola.UdiDecola;
+import Utilitarios.Utilitario;
+import Voo.Voo;
+
 import java.util.ArrayList;
 
 public class Hoteis extends Super_Empresa {
@@ -82,6 +86,16 @@ public class Hoteis extends Super_Empresa {
   }
   public void removequarto(Quartos a){
     quartos.remove(a);
+  }
+
+  public boolean venda(Quartos A, int quantidade){
+    // ADICIONAR VERIFICADOR
+    if(A.getReservado()) return false;
+    float faturamento = getFaturamento()+ (quantidade*A.getPreco());
+    setFaturamento(faturamento);
+    double taxa = getTaxa() + (quantidade*(UdiDecola.getTaxa()));
+    setTaxa(taxa);
+    return true;
   }
 
 

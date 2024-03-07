@@ -1,5 +1,7 @@
 package Pesquisa;
 
+import Pessoa.Data_nv;
+
 import java.util.Calendar;
 
 import java.util.Date;
@@ -9,9 +11,9 @@ public class Pesquisa {
 
 	private String origem;    // CIDADE
 	private String destino;  // CIDADE
-	private Date inicio;  // DATA
-	private Date volta;  // DATA
-	private Date dataehora; // MOMENTO DA PESQUISA
+	private Data_nv inicio;  // DATA
+	private Data_nv volta;  // DATA
+	private Data_nv dataehora; // MOMENTO DA PESQUISA
 	public String getOrigem() {
 		return origem;
 	}
@@ -24,31 +26,30 @@ public class Pesquisa {
 	public void setDestino(String destino) {
 		this.destino = destino;
 	}
-	public Date getInicio() {
+	public Data_nv getInicio() {
 		return inicio;
 	}
-	public void setInicio(Date inicio) {
+	public void setInicio(Data_nv inicio) {
 		this.inicio = inicio;
 	}
-	public Date getVolta() {
+	public Data_nv getVolta() {
 		return volta;
 	}
-	public void setVolta(Date volta) {
+	public void setVolta(Data_nv volta) {
 		this.volta = volta;
 	}
-	public Date getDataehora() {
+	public Data_nv getDataehora() {
 		return dataehora;
 	}
 	
 	
-	public Pesquisa(String origem, String destino, Date inicio, Date volta) {
+	public Pesquisa(String origem, String destino, Data_nv inicio, Data_nv volta, Data_nv momento) {
 		super();
 		this.origem = origem;
 		this.destino = destino;
 		this.inicio = inicio;
 		this.volta = volta;
-		Calendar a = Calendar.getInstance();
-		dataehora = a.getTime();
+		dataehora = momento;
 	}
 	
 	

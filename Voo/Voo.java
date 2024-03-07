@@ -1,37 +1,33 @@
 package Voo;
 
+import Pessoa.Data_nv;
+
 import java.util.ArrayList;
 
 import java.util.Calendar;
+
+import Trecho.Trechos;
 
 import java.util.Date;
 
 public class Voo {
     private float preco;
-    private final Trecho trecho;
-    private int qnt;
-    private Date saida;
-    private Date chegada;
-    private Date horarioplanejado;
-    private Date horarioconsumado;
+    private final Trechos trecho;
+    private Data_nv saida;
+    private Data_nv chegada;
+    private Data_nv horarioplanejado;
+    private Data_nv horarioconsumado;
     private boolean ativo;
     private boolean confirmado;
 
 
-    public Voo(Trecho trecho, Date saida, Date chegada, Date horarioplanejado){
+    public Voo(Trechos trecho, Data_nv saida, Data_nv chegada, Data_nv horarioplanejado){
         this.trecho = trecho;
         this.saida = saida;
         this.chegada = chegada;
         this.horarioplanejado = horarioplanejado;
         ativo = true;
         confirmado = false;
-    }
-
-    public void venda(){
-        qnt++;
-    }
-    public float faturamento(){
-        return preco*qnt;
     }
     public boolean alterapreco(float preco){
         if (preco>0) this.preco = preco;
@@ -41,13 +37,13 @@ public class Voo {
     
     public void cancelarvoo(){ativo = false;}
     
-    public void ConfirmaVoo(Date horario){
+    public void ConfirmaVoo(Data_nv horario){
         ativo = false;
         horarioconsumado = horario;
         confirmado =  true;
     }
     
-    public void AlterarVoo(Date datasaida, DAte datachegada, Date horarioplanejado){
+    public void AlterarVoo(Data_nv datasaida, Data_nv datachegada, Data_nv horarioplanejado){
         saida = datasaida;
         chegada = datachegada;
         this.horarioplanejado = horarioplanejado;
@@ -57,27 +53,23 @@ public class Voo {
         return preco;
     }
 
-    public Trecho getTrecho() {
+    public Trechos getTrecho() {
         return trecho;
     }
 
-    public int getQnt() {
-        return qnt;
-    }
-
-    public Date getSaida() {
+    public Data_nv getSaida() {
         return saida;
     }
 
-    public Date getChegada() {
+    public Data_nv getChegada() {
         return chegada;
     }
 
-    public Date getHorarioplanejado() {
+    public Data_nv getHorarioplanejado() {
         return horarioplanejado;
     }
 
-    public Date getHorarioconsumado() {
+    public Data_nv getHorarioconsumado() {
         return horarioconsumado;
     }
 
