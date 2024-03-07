@@ -1,8 +1,6 @@
 package Compras;
 import UdiDecola.UdiDecola;
 import Voo.Voo;
-import java.util.Calendar;
-import java.util.Date;
 import Pessoa.Clientes;
 public class Compras
 {
@@ -11,7 +9,7 @@ public class Compras
     private int valor_hotel, valor_aplicativo;
     private String metodo_pagamento;
     private boolean VIP;
-    private Date horario_compra;
+    private Tempo horario_compra;
     private int valor_companhia;
 
     private Clientes a;
@@ -19,7 +17,7 @@ public class Compras
     public Compras() {
     }
 
-    public Compras(Voo voo, Clientes a, double valor_pago, int valor_hotel, int valor_aplicativo, String metodo_pagamento, boolean VIP, Date horario_compra, int valor_companhia)
+    public Compras(Voo voo, Clientes a, double valor_pago, int valor_hotel, int valor_aplicativo, String metodo_pagamento, boolean VIP, Tempo horario_compra, int valor_companhia)
     {
         this.voo = voo;
         this.valor_hotel = valor_hotel;
@@ -34,7 +32,7 @@ public class Compras
     }
 
    /*
-   public Compras(Voo voo, double valor_pago, int quantidade_diarias, int quantidade_voos, int valor_hotel, int valor_aplicativo, String metodo_pagamento, boolean VIP, Date horario_compra)
+   public Compras(Voo voo, double valor_pago, int quantidade_diarias, int quantidade_voos, int valor_hotel, int valor_aplicativo, String metodo_pagamento, boolean VIP, Tempo horario_compra)
     {
         this.voo = voo;
         this.valor_hotel = valor_hotel;
@@ -84,11 +82,11 @@ public class Compras
         this.VIP = VIP;
     }
 
-    public Date getHorario_compra() {
+    public Tempo getHorario_compra() {
         return horario_compra;
     }
 
-    public void setHorario_compra(Date horario_compra) {
+    public void setHorario_compra(Tempo horario_compra) {
         this.horario_compra = horario_compra;
     }
 }
