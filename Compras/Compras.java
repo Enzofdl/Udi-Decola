@@ -3,9 +3,13 @@ import UdiDecola.UdiDecola;
 import Voo.Voo;
 import Pessoa.Clientes;
 import Empresa.Tempo;
+
+import java.util.ArrayList;
+
 public class Compras
 {
-    private Voo voo;
+    private ArrayList <Voo> voo;
+    private ArrayList <Diarias> diarias;
     private double valor_pago;
     private int valor_hotel, valor_aplicativo;
     private String metodo_pagamento;
@@ -19,9 +23,10 @@ public class Compras
     }
 
 
-    public Compras(Voo voo, Clientes a, double valor_pago, int valor_hotel, int valor_aplicativo, String metodo_pagamento, boolean VIP, Tempo horario_compra, int valor_companhia)
+    public Compras(ArrayList<Voo> voo, ArrayList<Diarias> diarias, Clientes a, double valor_pago, int valor_hotel, int valor_aplicativo, String metodo_pagamento, boolean VIP, Tempo horario_compra, int valor_companhia)
     {
         this.voo = voo;
+        this.diarias = diarias;
         this.valor_hotel = valor_hotel;
         this.valor_aplicativo = valor_aplicativo;
         this.metodo_pagamento = metodo_pagamento;
@@ -91,4 +96,21 @@ public class Compras
     public void setHorario_compra(Tempo horario_compra) {
         this.horario_compra = horario_compra;
     }
+
+    public ArrayList<Voo> getVoo() {
+        return voo;
+    }
+
+    public ArrayList<Diarias> getDiarias() {
+        return diarias;
+    }
+
+    public int getValor_companhia() {
+        return valor_companhia;
+    }
+
+    public Clientes getA() {
+        return a;
+    }
 }
+
