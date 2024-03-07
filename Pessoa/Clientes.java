@@ -14,7 +14,7 @@ public class Clientes extends Pessoa {
     private ArrayList <Voo> voos_futuros;
     private ArrayList <Compras> historico_compras;
     
-    public Clientes(String nome, String CPF, Data_nv data_nasc, Endereco end, String data_cadastro, String email)
+    public Clientes(String nome, String CPF, Data_nv data_nasc, Endereco end, Data_nv data_cadastro, String email)
     {
         super(nome, CPF, end,data_nasc);
         this.data_cadastro = data_cadastro;
@@ -35,7 +35,7 @@ public class Clientes extends Pessoa {
         return VIP;
     }
 
-    public String getData_cadastro() {
+    public Data_nv getData_cadastro() {
         return data_cadastro;
     }
 
