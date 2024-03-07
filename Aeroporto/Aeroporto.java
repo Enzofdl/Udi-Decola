@@ -28,7 +28,7 @@ public class Aeroporto {
   }
 
   public void registraTrecho(Trechos a) {
-    trechos.add(novoTrecho);
+    trechos.add(a);
   }
 
   public void removeTrecho(Trechos a) {
@@ -42,10 +42,10 @@ public class Aeroporto {
 
   
   public boolean BuscarTrecho(Trechos a){
-            return T.contains(a);
+            return trechos.contains(a);
         }
   public Trechos BuscarTrecho(int a){
-            return T.get(a);
+            return trechos.get(a);
         }
    
 
