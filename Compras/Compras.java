@@ -1,8 +1,6 @@
 package Compras;
 import UdiDecola.UdiDecola;
 import Voo.Voo;
-import java.util.Calendar;
-import java.util.Date;
 import Pessoa.Clientes;
 public class Compras
 {
