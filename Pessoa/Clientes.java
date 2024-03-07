@@ -10,6 +10,7 @@ public class Clientes extends Pessoa {
     private Data_nv data_cadastro;
     private boolean VIP;
     private int numero_compras;
+    private static int numero_compras_ativa_Vip;
     private double valor_gasto;
     private ArrayList <Voo> voos_futuros;
     private ArrayList <Compras> historico_compras;
@@ -70,7 +71,7 @@ public class Clientes extends Pessoa {
         valor_gasto += a.getValor_pago();
         numero_compras++;
 
-        if(historico_compras.size() == 15)
+        if(historico_compras.size() == numero_compras_ativa_Vip)
         {
             VIP = true;
         }
