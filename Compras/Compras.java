@@ -2,7 +2,7 @@ package Compras;
 import UdiDecola.UdiDecola;
 import Voo.Voo;
 import Pessoa.Clientes;
-import Empresa.Tempo;
+import java.util.Date;
 import Diarias.Diarias;
 
 import java.util.ArrayList;
@@ -15,8 +15,9 @@ public class Compras
     private int valor_hotel, valor_aplicativo;
     private String metodo_pagamento;
     private boolean VIP;
-    private Tempo horario_compra;
+    private Date horario_compra;
     private int valor_companhia;
+    
 
     private Clientes a;
 
@@ -24,15 +25,15 @@ public class Compras
     }
 
 
-    public Compras(ArrayList<Voo> voo, ArrayList<Diarias> diarias, Clientes a, double valor_pago, int valor_hotel, int valor_aplicativo, String metodo_pagamento, boolean VIP, Tempo horario_compra, int valor_companhia)
+    public Compras(ArrayList<Voo> voo, ArrayList<Diarias> diarias, Date horario, Clientes a, double valor_pago, int valor_hotel, int valor_aplicativo, String metodo_pagamento, boolean VIP, int valor_companhia)
     {
+        horario_compra = horario;
         this.voo = voo;
         this.diarias = diarias;
         this.valor_hotel = valor_hotel;
         this.valor_aplicativo = valor_aplicativo;
         this.metodo_pagamento = metodo_pagamento;
         this.VIP = VIP;
-        this.horario_compra = horario_compra;
         this.valor_companhia = valor_companhia;
         this.a = a;
         double aux = UdiDecola.getFaturamento();
