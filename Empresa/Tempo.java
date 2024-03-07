@@ -1,6 +1,10 @@
+package Empresa;
+
 public class Tempo {
   private int hora;
   private int min;
+
+  private boolean verificador;
 
   public Tempo(int hora, int min) {
     this.hora = hora;
