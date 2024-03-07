@@ -3,6 +3,7 @@ import UdiDecola.UdiDecola;
 import Voo.Voo;
 import Pessoa.Clientes;
 import Empresa.Tempo;
+import Diarias.Diarias;
 
 import java.util.ArrayList;
 
