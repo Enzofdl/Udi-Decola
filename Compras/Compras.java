@@ -40,18 +40,6 @@ public class Compras
         UdiDecola.setTaxa(aux);
     }
 
-   /*
-   public Compras(Voo voo, double valor_pago, int quantidade_diarias, int quantidade_voos, int valor_hotel, int valor_aplicativo, String metodo_pagamento, boolean VIP, Tempo horario_compra)
-    {
-        this.voo = voo;
-        this.valor_hotel = valor_hotel;
-        this.valor_aplicativo = valor_aplicativo;
-        this.metodo_pagamento = metodo_pagamento;
-        this.VIP = VIP;
-        this.horario_compra = horario_compra;
-    }
-    */
-
 
     public double getValor_pago() {
         return valor_pago;
@@ -91,11 +79,11 @@ public class Compras
         this.VIP = VIP;
     }
 
-    public Tempo getHorario_compra() {
+    public Date getHorario_compra() {
         return horario_compra;
     }
 
-    public void setHorario_compra(Tempo horario_compra) {
+    public void setHorario_compra(Date horario_compra) {
         this.horario_compra = horario_compra;
     }
 
