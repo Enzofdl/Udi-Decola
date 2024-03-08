@@ -38,17 +38,17 @@ public class Utilitario {
     public static boolean validaIdentif(String Identificador)
     {
         if(Identificador.length() !=8) return false;
-        if((Identificador.charAt(0) < '0') || (Identificador.charAt(1) < '0') || (Identificador.charAt(2) < '0'))
+        if((Identificador.charAt(0) < 'A') || (Identificador.charAt(1) < 'A') || (Identificador.charAt(2) < 'A'))
         {
             return false;
         }
-        else if((Identificador.charAt(0) > '9') || (Identificador.charAt(1) > '9') || (Identificador.charAt(2) > '9'))
+        else if((Identificador.charAt(0) > 'Z') || (Identificador.charAt(1) > 'Z') || (Identificador.charAt(2) > 'Z'))
         {
             return false;
         }
         for(int i = 3; i < 8; i++)
         {
-            if((Identificador.charAt(i) >= '0') && (Identificador.charAt(i) <= '9')) return false;
+            if((Identificador.charAt(i) < '0') || (Identificador.charAt(i) > '9')) return false;
         }
         return true;
 
