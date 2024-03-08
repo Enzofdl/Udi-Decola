@@ -48,7 +48,7 @@ public class Utilitario {
         }
         for(int i = 3; i < 5; i++)
         {
-            if((Identificador.charAt(i) > '0') && (Identificador.charAt(i) < '9')) return false;
+            if((Identificador.charAt(i) >= '0') && (Identificador.charAt(i) <= '9')) return false;
         }
         return true;
 
