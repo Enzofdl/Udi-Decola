@@ -54,15 +54,7 @@ public class Utilitario {
 
     }
 
-    /*
-    public static boolean validadata(){return true;}
-    public static boolean validahorario(){return true;}
-    public static boolean validaendereco(){return true;}
-    public static boolean validaquarto(){return true;}
-    public static boolean validaprecos(){return true;}
-    public static boolean validasalario(){return true;}
-    public static boolean verificavoo(Voo a){return true;}
-    */
+
     public static boolean validaemail(String email) {
         // Expressão regular para validar o formato do email
         String regex = "^[a-zA-Z0-9_+&*-]+(?:\\.[a-zA-Z0-9_+&*-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,7}$";
@@ -78,8 +70,6 @@ public class Utilitario {
     }
 
 
-    /*
-    public static boolean validavenda(Voo a, int quantidade) {
-        return true;
-    }*/
+   
+    }
 }
