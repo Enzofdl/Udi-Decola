@@ -8,7 +8,6 @@ public class Utilitario {
 
 
 
-    public static boolean validacnpj(){return true;}
     public static boolean validacpf(String CPF){
 
         //verificar se o CPF possui o tamanho ideal
@@ -51,21 +50,6 @@ public class Utilitario {
         }
         return true;
 
-    }
-
-
-    public static boolean validaemail(String email) {
-        // Expressão regular para validar o formato do email
-        String regex = "^[a-zA-Z0-9_+&*-]+(?:\\.[a-zA-Z0-9_+&*-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,7}$";
-
-        // Compilar a expressão regular em um padrão
-        Pattern pattern = Pattern.compile(regex);
-
-        // Criar um objeto Matcher
-        Matcher matcher = pattern.matcher(email);
-
-        // Verificar se o email corresponde ao padrão
-        return matcher.matches();
     }
 
 
