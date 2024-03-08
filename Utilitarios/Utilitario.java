@@ -37,7 +37,7 @@ public class Utilitario {
 
     public static boolean validaIdentif(String Identificador)
     {
-        if(Identificador.length() !=5) return false;
+        if(Identificador.length() !=8) return false;
         if((Identificador.charAt(0) < '0') || (Identificador.charAt(1) < '0') || (Identificador.charAt(2) < '0'))
         {
             return false;
@@ -46,7 +46,7 @@ public class Utilitario {
         {
             return false;
         }
-        for(int i = 3; i < 5; i++)
+        for(int i = 3; i < 8; i++)
         {
             if((Identificador.charAt(i) >= '0') && (Identificador.charAt(i) <= '9')) return false;
         }
