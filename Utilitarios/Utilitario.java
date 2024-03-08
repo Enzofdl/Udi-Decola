@@ -8,6 +8,7 @@ public class Utilitario {
 
 
 
+    public static boolean validacnpj(){return true;}
     public static boolean validacpf(String CPF){
 
         //verificar se o CPF possui o tamanho ideal
