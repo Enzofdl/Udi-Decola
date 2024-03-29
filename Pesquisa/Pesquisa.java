@@ -51,9 +51,4 @@ public class Pesquisa {
 		this.volta = volta;
 		dataehora = momento;
 	}
-	
-	
-	
-	
-	
 }

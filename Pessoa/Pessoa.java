@@ -1,7 +1,7 @@
 package Pessoa;
 import Utilitarios.Utilitario;
 
-public class Pessoa {
+public abstract class Pessoa {
     private String nome, CPF;
     private Endereco endereco;
     private Data_nv data_nascimento;

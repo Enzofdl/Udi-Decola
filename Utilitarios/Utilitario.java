@@ -4,10 +4,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 
-public class Utilitario {
-
-
-
+public abstract class Utilitario {
     public static boolean validacnpj(){return true;}
     public static boolean validacpf(String CPF){
 

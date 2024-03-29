@@ -32,4 +32,5 @@ public class Funcionarios extends Pessoa{
         if(salario < 1412) this.salario = 1412;
         else this.salario = salario;
     }
+
 }
