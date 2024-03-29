@@ -13,8 +13,8 @@ public class Trechos {
     private final Aeroporto origem;
     private final Aeroporto destino;
     private final String CodigoIdentificador;
-    private ArrayList<Voo> futurosvoos;
-    private ArrayList<Voo> historicovoo;
+    private ArrayList<Voo> futurosvoos = new ArrayList<Voo>();
+    private ArrayList<Voo> historicovoo = new ArrayList<Voo>();
 
     private boolean ativo;
 
