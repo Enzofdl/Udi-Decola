@@ -7,12 +7,24 @@ public class DadosTrecho {
 
     public static boolean Inserir(Trechos t)
     {
-        if(Buscar(t.getNome())) return false;
+        if(Existe(t.getNome())) return false;
         vetTrechos.add(t);
         return true;
     }
 
-    public static boolean Buscar(String nome)
+    public static Trechos Buscar(String nome)
+    {
+        for(Trechos objeto: vetTrechos)
+        {
+            if(objeto.getNome().equals(nome))
+            {
+                return objeto;
+            }
+        }
+        return null;
+    }
+
+    public static boolean Existe(String nome)
     {
         for(Trechos objeto: vetTrechos)
         {

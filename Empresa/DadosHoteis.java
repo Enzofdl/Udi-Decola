@@ -3,7 +3,11 @@ package Empresa;
 import java.util.ArrayList;
 
 public class DadosHoteis {
-    public static ArrayList<Hoteis> vetHoteis = new ArrayList<Hoteis>();
+    private static ArrayList<Hoteis> vetHoteis = new ArrayList<Hoteis>();
 
+    public static void Cadastrar(Hoteis h)
+    {
+        vetHoteis.add(h);
+    }
 
 }
