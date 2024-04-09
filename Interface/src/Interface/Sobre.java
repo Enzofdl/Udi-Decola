@@ -1,4 +1,4 @@
-package interfaceteste;
+package Sobre;
 
 import java.awt.BorderLayout;
 import java.awt.Button;
@@ -6,13 +6,12 @@ import java.awt.Choice;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
+import java.awt.GradientPaint;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Image;
 import java.awt.RenderingHints;
 import java.awt.Toolkit;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -22,17 +21,34 @@ import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 
 import Cadastro.CadastroGeral;
-import Sobre.Sobre;
+import interfaceteste.Teste;
 
 import java.awt.Label;
+import javax.swing.JTextArea;
 
-public class Teste {
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.ComponentAdapter;
+import java.awt.event.ComponentEvent;
+import javax.swing.JTextField;
+import javax.swing.DropMode;
+
+public class Sobre {
 
     private JFrame frmUdidecola;
 
+    public static void main(String[] args) {
+        Sobre window = new Sobre();
+        window.frmUdidecola.setVisible(true);
+    }
+
+    public Sobre() {
+        initialize();
+    }
     public void setVisible(boolean a) {
     	frmUdidecola.setVisible(a);
     }
+
     public void initialize() {
         frmUdidecola = new JFrame();
         frmUdidecola.setTitle("UdiDecola");
@@ -239,25 +255,165 @@ public class Teste {
         	
         });
 		
-		JPanel chamad = new JPanel();
-		chamad.setOpaque(false);
-		chamad.setBounds(254, 202, 293, 138);
-		contentPane.add(chamad);
-		chamad.setLayout(null);
+		JPanel UFU = new JPanel()
+				{
+			 @Override
+			    protected void paintComponent(Graphics g) {
+			        // Chama o método paintComponent da superclasse para garantir que a funcionalidade padrão seja preservada
+			        super.paintComponent(g);
+
+			        // Obtém as dimensões da JLabel
+			        int width = getWidth();
+			        int height = getHeight();
+
+			        // Cria um gradiente de canal alfa da esquerda para a direita
+			        GradientPaint gradient = new GradientPaint(0, 0, new Color(91, 239, 173, 100), width, 0, new Color(255, 255, 255, 0));
+
+			        // Cria um objeto Graphics2D a partir do objeto Graphics passado como argumento
+			        Graphics2D g2d = (Graphics2D) g.create();
+
+			        // Define o gradiente como o pincel de desenho
+			        g2d.setPaint(gradient);
+
+			        // Preenche um retângulo com o gradiente
+			        g2d.fillRect(0, 0, width, height);
+
+			        // Libera o recurso gráfico
+			        g2d.dispose();
+			    }
+				};
+				
+				UFU.setOpaque(false);
+		UFU.setToolTipText("");
+		UFU.setBackground(new Color(0, 204, 51));
+		UFU.setBounds(137, 130, 526, 120);
+		contentPane.add(UFU);
+		UFU.setLayout(null);
 		
-		JLabel label_1 = new JLabel("Boas Vindas,");
-		label_1.setHorizontalAlignment(SwingConstants.CENTER);
-		label_1.setHorizontalTextPosition(SwingConstants.CENTER);
-		label_1.setBounds(0, 0, 293, 22);
-		label_1.setAlignmentX(Label.CENTER);
-		chamad.add(label_1);
+		JLabel lblNewLabel = new JLabel("<html>Projeto feito pela<br>Universidade Federal de Uberlândia.</html>");
+		lblNewLabel.setFont(new Font("MS Gothic", Font.PLAIN, 20));
+		lblNewLabel.setBounds(31, 20, 400, 70);
+		UFU.add(lblNewLabel);
 		
-		JLabel label_1_1 = new JLabel("<Usuário>!");
-		label_1_1.setHorizontalAlignment(SwingConstants.CENTER);
-		label_1_1.setFont(new Font("Dialog", Font.BOLD, 18));
-		label_1_1.setAlignmentX(Label.CENTER);
-		label_1_1.setBounds(0, 23, 293, 63);
-		chamad.add(label_1_1);
+		JPanel panel_1 = new JPanel()
+				{
+			@Override
+            protected void paintComponent(Graphics g) {
+                super.paintComponent(g);
+               
+                // Adicionar imagem de fundo
+                ImageIcon imageIcon = new ImageIcon("C:\\Users\\filip\\OneDrive\\Área de Trabalho\\Design UdiDecola\\Assets\\Ufu_logo.png");
+                Image image = imageIcon.getImage();
+                g.drawImage(image, 0, 0, getWidth(), getHeight(), this);
+				}
+				};
+				
+		panel_1.setBounds(406, 0, 120, 120);
+		panel_1.setOpaque(false);
+		UFU.add(panel_1);
+		
+		JPanel UFU_1 = new JPanel() {
+			
+				 @Override
+				    protected void paintComponent(Graphics g) {
+				        // Chama o método paintComponent da superclasse para garantir que a funcionalidade padrão seja preservada
+				        super.paintComponent(g);
+
+				        // Obtém as dimensões da JLabel
+				        int width = getWidth();
+				        int height = getHeight();
+
+				        // Cria um gradiente de canal alfa da esquerda para a direita
+				        GradientPaint gradient = new GradientPaint(0, 0, new Color(255, 255, 255, 0), width, 0, new Color(91, 239, 173, 100));
+
+				        // Cria um objeto Graphics2D a partir do objeto Graphics passado como argumento
+				        Graphics2D g2d = (Graphics2D) g.create();
+
+				        // Define o gradiente como o pincel de desenho
+				        g2d.setPaint(gradient);
+
+				        // Preenche um retângulo com o gradiente
+				        g2d.fillRect(0, 0, width, height);
+
+				        // Libera o recurso gráfico
+				        g2d.dispose();
+				    }
+					};
+		UFU_1.setLayout(null);
+		UFU_1.setToolTipText("");
+		UFU_1.setOpaque(false);
+		UFU_1.setBackground(new Color(0, 204, 51));
+		UFU_1.setBounds(137, 264, 526, 120);
+		contentPane.add(UFU_1);
+		
+		JLabel lblNewLabel_1 = new JLabel("Desenvolvido e criado em Java");
+		lblNewLabel_1.setFont(new Font("MS Gothic", Font.PLAIN, 20));
+		lblNewLabel_1.setBounds(210, 52, 306, 24);
+		UFU_1.add(lblNewLabel_1);
+		
+		JPanel panel_1_1 = new JPanel() {
+			@Override
+            protected void paintComponent(Graphics g) {
+              
+                // Adicionar imagem de fundo
+                ImageIcon imageIcon = new ImageIcon("C:\\Users\\filip\\OneDrive\\Área de Trabalho\\Design UdiDecola\\Assets\\Java_logo.png");
+                Image image = imageIcon.getImage();
+                g.drawImage(image, 0, 0, getWidth(), getHeight(), this);
+				}
+				};
+	
+		panel_1_1.setBounds(0, 0, 120, 120);
+		UFU_1.add(panel_1_1);
+		
+		JPanel UFU_2 = new JPanel() {
+			 @Override
+			    protected void paintComponent(Graphics g) {
+			        // Chama o método paintComponent da superclasse para garantir que a funcionalidade padrão seja preservada
+			        super.paintComponent(g);
+
+			        // Obtém as dimensões da JLabel
+			        int width = getWidth();
+			        int height = getHeight();
+
+			        // Cria um gradiente de canal alfa da esquerda para a direita
+			        GradientPaint gradient = new GradientPaint(0, 0, new Color(91, 239, 173, 100), width, 0, new Color(255, 255, 255, 0));
+
+			        // Cria um objeto Graphics2D a partir do objeto Graphics passado como argumento
+			        Graphics2D g2d = (Graphics2D) g.create();
+
+			        // Define o gradiente como o pincel de desenho
+			        g2d.setPaint(gradient);
+
+			        // Preenche um retângulo com o gradiente
+			        g2d.fillRect(0, 0, width, height);
+
+			        // Libera o recurso gráfico
+			        g2d.dispose();
+			    }
+				};
+		UFU_2.setLayout(null);
+		UFU_2.setToolTipText("");
+		UFU_2.setOpaque(false);
+		UFU_2.setBackground(new Color(0, 204, 51));
+		UFU_2.setBounds(137, 398, 526, 120);
+		contentPane.add(UFU_2);
+		
+		JLabel lblNewLabel_2 = new JLabel("<html>Feito por<br>Bernardo Tibaldi, Caio Henrique,<br>Enzo Faria e Marcos Paulo.</html>");
+		lblNewLabel_2.setFont(new Font("MS Gothic", Font.PLAIN, 20));
+		lblNewLabel_2.setBounds(30, 20, 400, 70);
+		UFU_2.add(lblNewLabel_2);
+		
+		JPanel panel_1_2 = new JPanel() {
+			@Override
+            protected void paintComponent(Graphics g) {
+                
+                // Adicionar imagem de fundo
+                ImageIcon imageIcon = new ImageIcon("C:\\Users\\filip\\OneDrive\\Área de Trabalho\\Design UdiDecola\\Assets\\Github_logo.png");
+                Image image = imageIcon.getImage();
+                g.drawImage(image, 0, 0, getWidth(), getHeight(), this);
+				}
+				};
+		panel_1_2.setBounds(406, 0, 120, 120);
+		UFU_2.add(panel_1_2);
 	}
-    
 }
