@@ -8,7 +8,7 @@ public class Funcionarios extends Pessoa{
     {
 
     }
-    public Funcionarios(String nome, String CPF, Data_nv data_nasc, Endereco end, String numero_carteira, double salario)
+    public Funcionarios(String nome, String CPF, Data_nv data_nasc, String end, String numero_carteira, double salario)
     {
         super(nome, CPF, end,data_nasc);
         this.numero_carteira = numero_carteira;
