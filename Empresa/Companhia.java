@@ -22,19 +22,6 @@ public class Companhia extends Super_Empresa {
             T = new ArrayList<Trechos>();
         }
 
-        public boolean venda(Voo A, int quantidade){
-            if(A.getQuantidade() <= 0) return false;
-
-            A.reduzQuantidade();
-            float faturamento = getFaturamento()+ (quantidade*A.getPreco());
-            setFaturamento(faturamento);
-            double taxa = getTaxa() + (quantidade*(UdiDecola.getTaxa()));
-            setTaxa(taxa);
-            AdicionarHistorico(A);
-            return true;
-        }
-
-
          public void NovoTrecho(Trechos a){
             T.add(a);
      }
