@@ -37,6 +37,18 @@ public class Clientes extends Pessoa {
         historico_compras = new ArrayList<Compras>();
     }
 
+    public Clientes(String nome, String CPF, Data_nv data_nasc, Endereco end, String email)
+    {
+        super(nome, CPF, end,data_nasc);
+        this.data_cadastro = data_cadastro;
+        this.email = email;
+        this.VIP = false;
+        this.numero_compras = 0;
+        this.valor_gasto = 0;
+        voos_futuros = new ArrayList<Voo>();
+        historico_compras = new ArrayList<Compras>();
+    }
+
     public String getEmail() {
         return email;
     }
