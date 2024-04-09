@@ -3,7 +3,8 @@ import Utilitarios.Utilitario;
 
 public abstract class Pessoa {
     private String nome, CPF;
-    private Endereco endereco;
+    //private Endereco endereco;
+    private String end;
     private Data_nv data_nascimento;
 
 
@@ -18,10 +19,10 @@ public abstract class Pessoa {
         this.nome = nome;
     }
 
-    public Pessoa(String nome, String CPF, Endereco endereco, Data_nv data_nascimento)
+    public Pessoa(String nome, String CPF, String end, Data_nv data_nascimento)
     {
         this(nome, CPF);
-        this.endereco = endereco;
+        this.end = end;
         this.data_nascimento = data_nascimento;
     }
 
@@ -42,12 +43,12 @@ public abstract class Pessoa {
         else this.CPF = "";
     }
 
-    public Endereco getEndereco() {
-        return endereco;
+    public String getEndereco() {
+        return end;
     }
 
-    public void setEndereco(Endereco endereco) {
-        this.endereco = endereco;
+    public void setEndereco(String endereco) {
+        this.end = endereco;
     }
 
     public Data_nv getData_nascimento() {
