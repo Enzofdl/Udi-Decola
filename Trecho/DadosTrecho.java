@@ -5,6 +5,13 @@ import java.util.ArrayList;
 public class DadosTrecho {
     private static ArrayList<Trechos> vetTrechos= new ArrayList<Trechos>();
 
+
+
+
+
+    public static ArrayList<Trechos> retornatrechos (){
+        return vetTrechos;
+    }
     public static boolean Inserir(Trechos t)
     {
         if(Existe(t.getNome())) return false;

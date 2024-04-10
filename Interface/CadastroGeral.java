@@ -713,6 +713,12 @@ public class CadastroGeral {
             JLabel cpfLabel = new JLabel("Origem:");
             cpfLabel.setBounds(120, 40, 70, 20);
             JComboBox <Aeroporto> origemField = new JComboBox<>();
+            ArrayList<Aeroporto> aux;
+            aux = DadosAeroporto.retornaaero();
+            for(int i = 0 ; i<aux.size(); i++){
+                origemField.addItem(aux.get(i));
+            }
+
             origemField.setBounds(170, 40, 90, 20);
             
             
@@ -720,6 +726,11 @@ public class CadastroGeral {
             carteiraLabel.setBounds(280, 40, 80, 20);
             JTextField carteiraField = new JTextField(12);
             JComboBox <Aeroporto> destinoField = new JComboBox<>();
+            ArrayList<Aeroporto> auxx;
+            auxx = DadosAeroporto.retornaaero();
+            for(int i = 0; i<auxx.size(); i++){
+                destinoField.addItem(auxx.get(i));
+            }
             destinoField.setBounds(330, 40, 90, 20);
             
          
@@ -778,6 +789,11 @@ public class CadastroGeral {
             nomeLabel.setBounds(10, 10, 80, 20);
             JComboBox <Trechos> trechoField = new JComboBox<>();
             trechoField.setBounds(120, 10, 100, 20);
+            ArrayList<Trechos> a;
+            a = DadosTrecho.retornatrechos();
+            for(int i =0; i<a.size(); i++){
+                trechoField.addItem(a.get(i));
+            }
 
            
          
@@ -824,11 +840,8 @@ public class CadastroGeral {
                 @Override
                 public void actionPerformed(ActionEvent e) {
                     Data_nv a = new Data_nv((int) dia.getSelectedItem(), (int) mes.getSelectedItem(), (int) ano.getSelectedItem());
+                    DadosVoo.Cadastra(new Voo((Trechos)trechoField.getSelectedItem(), a, Double.parseDouble(quartosField.getText()), ativo.isSelected()));
 
-
-                    
-                
-                       
                 }
             });
 
@@ -857,12 +870,5 @@ public class CadastroGeral {
         formularioPanel.revalidate();
         formularioPanel.repaint();
     }
-	private class SwingAction extends AbstractAction {
-		public SwingAction() {
-			putValue(NAME, "SwingAction");
-			putValue(SHORT_DESCRIPTION, "Some short description");
-		}
-		public void actionPerformed(ActionEvent e) {
-		}
-	}
+
 }

@@ -4,6 +4,11 @@ import java.util.ArrayList;
 public class DadosAeroporto {
     private static ArrayList<Aeroporto> vetaero = new ArrayList<Aeroporto>();
 
+
+    public static ArrayList<Aeroporto> retornaaero(){
+        return vetaero;
+    }
+
     public static boolean cadastrar(Aeroporto a)
     {
         if(Existe(a.getNome())) return false;
