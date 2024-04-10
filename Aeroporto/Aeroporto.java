@@ -10,6 +10,7 @@ public class Aeroporto implements Serializable {
 
   ArrayList<Trechos> trechos = new ArrayList<Trechos>();
 
+
   public Aeroporto(String nome, String cidade, ArrayList<Trechos> trechos) {
     this.nome = nome;
     this.cidade = cidade;

@@ -4,6 +4,8 @@ import java.util.ArrayList;
 
 import Persist.Arquivo;
 
+import static Persist.BancodeDados.Insere_TrechoBanco;
+
 public class DadosTrecho {
     private static ArrayList<Trechos> vetTrechos;
 
@@ -26,6 +28,7 @@ public class DadosTrecho {
         if(Existe(t.getNome())) return false;
         vetTrechos.add(t);
         Arquivo.gravar(vetTrechos, "trechos.dat");
+        Insere_TrechoBanco(t.getNome(), t.getCodigoIdentificador(), t.isAtivo());
         return true;
     }
 
@@ -73,6 +76,7 @@ public class DadosTrecho {
         i = Buscar_posicao(nome);
         if(i == (-1)) return false;
         vetTrechos.remove(i);
+        Arquivo.gravar(vetTrechos, "trechos.dat");
         return true;
     }
 }
