@@ -22,9 +22,6 @@ public class Companhia extends Super_Empresa {
             T = new ArrayList<Trechos>();
         }
 
-
-
-
          public void NovoTrecho(Trechos a){
             T.add(a);
      }
