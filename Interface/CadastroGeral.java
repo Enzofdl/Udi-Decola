@@ -4,6 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 import Aeroporto.*;
 import Compras.*;
@@ -329,9 +330,9 @@ public class CadastroGeral {
                     String cpf = cpfField.getText();
                     String email = emailField.getText();
                     String endereco = enderecoField.getText();
-                    Data_nv a = new Data_nv(Integer.parseInt(dia.getName()), Integer.parseInt(mes.getName()), Integer.parseInt(ano.getName()));
+                   // Data_nv a = new Data_nv(Integer.parseInt(dia.getName()), Integer.parseInt(mes.getName()), Integer.parseInt(ano.getName()));
 
-                    DadosClientes.InsereCliente(new Clientes(nome, cpf, a, endereco, email));
+                   // DadosClientes.InsereCliente(new Clientes(nome, cpf, a, endereco, email));
                 }
             });
 
@@ -429,7 +430,12 @@ public class CadastroGeral {
                     String nome = nomeField.getText();
                     String cpf = cpfField.getText();
                     String email = emailField.getText();
-                    String endereco = enderecoField.getText();       
+                    String endereco = enderecoField.getText();
+                    String clt = "0.00";
+                    clt = carteiraField.getText();
+                    String salario = salarioField.getText();
+                    Data_nv a = new Data_nv(0, 0, 0);
+                    DadoFuncionario.Cadastrar(new Funcionarios(nome, cpf, a, endereco, clt, Double.parseDouble(salario)));
                 }
             });
 
@@ -474,7 +480,7 @@ public class CadastroGeral {
                 public void actionPerformed(ActionEvent e) {
                     String nome = nomeField.getText();
                     String cpf = cidadeField.getText();
-                     
+                     DadosAeroporto.cadastrar(new Aeroporto(nome, cpf, new ArrayList<>()));
                 }
             });
 
@@ -566,8 +572,15 @@ public class CadastroGeral {
                 @Override
                 public void actionPerformed(ActionEvent e) {
                     String nome = nomeField.getText();
-                    String cpf = cpfField.getText();
-                    String endereco = enderecoField.getText();       
+                    String nomef =cpfField.getText();
+
+                    String cnpj = carteiraField.getText();
+                    boolean a;
+                    if(petField.equals(opA)) a = true;
+                    else a = false;
+                    String endereco = enderecoField.getText();
+                    String data = dia.getSelectedItem() + "/" + mes.getSelectedItem() + "/" + ano.getSelectedItem();
+                    DadosHoteis.Cadastrar(new Hoteis(cnpj, nome, nomef, data, endereco, (float) 3.0, a));
                 }
             });
 
@@ -661,8 +674,13 @@ public class CadastroGeral {
                 @Override
                 public void actionPerformed(ActionEvent e) {
                     String nome = nomeField.getText();
-                    String cpf = cpfField.getText();
-                    String endereco = enderecoField.getText();       
+                    String nomef =cpfField.getText();
+                    String cnpj = carteiraField.getText();
+
+                    String endereco = enderecoField.getText();
+                    String desconto = quartosField.getText();
+                    String data = dia.getSelectedItem() + "/" + mes.getSelectedItem() + "/" + ano.getSelectedItem();
+
                 }
             });
 
@@ -694,14 +712,14 @@ public class CadastroGeral {
 
             JLabel cpfLabel = new JLabel("Origem:");
             cpfLabel.setBounds(120, 40, 70, 20);
-            JComboBox <String> origemField = new JComboBox<>();
+            JComboBox <Aeroporto> origemField = new JComboBox<>();
             origemField.setBounds(170, 40, 90, 20);
             
             
             JLabel carteiraLabel = new JLabel("Destino:");
             carteiraLabel.setBounds(280, 40, 80, 20);
             JTextField carteiraField = new JTextField(12);
-            JComboBox <String> destinoField = new JComboBox<>();
+            JComboBox <Aeroporto> destinoField = new JComboBox<>();
             destinoField.setBounds(330, 40, 90, 20);
             
          
@@ -725,8 +743,13 @@ public class CadastroGeral {
                 @Override
                 public void actionPerformed(ActionEvent e) {
                     String nome = nomeField.getText();
-                
-                       
+                    Aeroporto ori = (Aeroporto) origemField.getSelectedItem();
+                    Aeroporto destin = (Aeroporto) destinoField.getSelectedItem();
+                    String cod = quartosField.getText();
+                    boolean atv = ativo.isSelected();
+                    Trechos aux = new Trechos(ori, destin, nome, cod);
+
+                    DadosTrecho.Inserir(aux);
                 }
             });
 
@@ -753,7 +776,7 @@ public class CadastroGeral {
         	
         	JLabel nomeLabel = new JLabel("Trecho:");
             nomeLabel.setBounds(10, 10, 80, 20);
-            JComboBox <String> trechoField = new JComboBox<>();
+            JComboBox <Trechos> trechoField = new JComboBox<>();
             trechoField.setBounds(120, 10, 100, 20);
 
            
@@ -800,6 +823,9 @@ public class CadastroGeral {
             okButton.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
+                    Data_nv a = new Data_nv((int) dia.getSelectedItem(), (int) mes.getSelectedItem(), (int) ano.getSelectedItem());
+
+
                     
                 
                        

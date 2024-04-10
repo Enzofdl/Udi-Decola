@@ -18,7 +18,7 @@ public class Trechos {
 
     private boolean ativo;
 
-    private Trechos(Aeroporto origem, Aeroporto destino, String nome, String CodigoIdentificador){
+    public Trechos(Aeroporto origem, Aeroporto destino, String nome, String CodigoIdentificador){
         this.origem = origem;
         this.destino = destino;
         this.nome = nome;
@@ -30,7 +30,7 @@ public class Trechos {
         else this.CodigoIdentificador = "00000";
     }
 
-    public static boolean criartrecho(Aeroporto origem, Aeroporto destino, String nome, String CodigoIdentificador, String Identificador, Trechos a){
+    public static boolean criartrecho(Aeroporto origem, Aeroporto destino, String nome, String CodigoIdentificador, Trechos a){
         if(origem != destino) {
             a = new Trechos(origem, destino, nome, CodigoIdentificador);
             return true;

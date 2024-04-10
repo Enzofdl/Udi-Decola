@@ -29,6 +29,12 @@ public class Voo {
         ativo = true;
         confirmado = false;
     }
+    public Voo(Trechos trecho, Data_nv saida, double preco, boolean ativo){
+        this.trecho = trecho;
+        this.saida = saida;
+        this.ativo = ativo;
+        confirmado = false;
+    }
     public boolean alterapreco(float preco){
         if (preco>0) this.preco = preco;
         else return false;
