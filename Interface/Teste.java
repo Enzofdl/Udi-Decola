@@ -22,12 +22,15 @@ import java.awt.Label;
 
 public class Teste {
 
+	
+
     private JFrame frmUdidecola;
 
     public void setVisible(boolean a) {
     	frmUdidecola.setVisible(a);
     }
     public void initialize() {
+	Dadostrecho.inicializar();
         frmUdidecola = new JFrame();
         frmUdidecola.setTitle("UdiDecola");
         frmUdidecola.setAutoRequestFocus(true);
