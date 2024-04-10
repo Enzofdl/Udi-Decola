@@ -2,6 +2,7 @@ package Voo;
 
 import Pessoa.Data_nv;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 import java.util.Calendar;
@@ -10,7 +11,7 @@ import Trecho.Trechos;
 
 import java.util.Date;
 
-public class Voo {
+public class Voo implements Serializable {
     private float preco;
     private final Trechos trecho;
     private Data_nv saida;

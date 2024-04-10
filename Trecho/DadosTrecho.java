@@ -2,12 +2,21 @@ package Trecho;
 
 import java.util.ArrayList;
 
+import Persist.Arquivo;
+
 public class DadosTrecho {
-    private static ArrayList<Trechos> vetTrechos= new ArrayList<Trechos>();
+    private static ArrayList<Trechos> vetTrechos;
 
+    public static void Inicializar()
+    {
+        vetTrechos = (ArrayList<Trechos>) Arquivo.recuperar("trechos.dat");
+        if(vetTrechos == null) vetTrechos = new ArrayList<Trechos>();
+    }
 
-
-
+    public static void Salvar()
+    {
+        Arquivo.gravar(vetTrechos, "trechos.dat");
+    }
 
     public static ArrayList<Trechos> retornatrechos (){
         return vetTrechos;
@@ -16,6 +25,7 @@ public class DadosTrecho {
     {
         if(Existe(t.getNome())) return false;
         vetTrechos.add(t);
+        Arquivo.gravar(vetTrechos, "trechos.dat");
         return true;
     }
 

@@ -1,9 +1,10 @@
 package Aeroporto;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import Trecho.Trechos;
 
-public class Aeroporto {
+public class Aeroporto implements Serializable {
   private String nome;
   private final String cidade;
 

@@ -7,8 +7,9 @@ import Voo.Voo;
 import Aeroporto.*;
 
 import Utilitarios.Utilitario;
+import java.io.Serializable;
 
-public class Trechos {
+public class Trechos implements Serializable{
     private final String nome;
     private final Aeroporto origem;
     private final Aeroporto destino;
