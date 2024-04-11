@@ -319,6 +319,11 @@ public class CadastroGeral {
             for(int i =2024; i>=1920; i--) {
             	ano.addItem(i);
             }
+            JLabel sucessoLabel = new JLabel("Cadastrado com sucesso!");
+            sucessoLabel.setBounds(120, 160, 200, 20);
+            sucessoLabel.setVisible(false);
+            sucessoLabel.setForeground(new Color(255, 45, 0));
+            formularioPanel.add(sucessoLabel);
 
             JButton okButton = new JButton("OK");
             okButton.setBounds(340, 160, 80, 20);
@@ -333,6 +338,7 @@ public class CadastroGeral {
                    // Data_nv a = new Data_nv(Integer.parseInt(dia.getName()), Integer.parseInt(mes.getName()), Integer.parseInt(ano.getName()));
 
                    // DadosClientes.InsereCliente(new Clientes(nome, cpf, a, endereco, email));
+                    sucessoLabel.setVisible(true);
                 }
             });
 
@@ -421,6 +427,13 @@ public class CadastroGeral {
             	ano.addItem(i);
             }
 
+
+            JLabel sucessoLabel = new JLabel("Cadastrado com sucesso!");
+            sucessoLabel.setBounds(120, 160, 200, 20);
+            sucessoLabel.setVisible(false);
+            sucessoLabel.setForeground(new Color(255, 45, 0));
+            formularioPanel.add(sucessoLabel);
+
             JButton okButton = new JButton("OK");
             okButton.setBounds(340, 160, 80, 20);
             okButton.setOpaque(false);
@@ -436,6 +449,7 @@ public class CadastroGeral {
                     String salario = salarioField.getText();
                     Data_nv a = new Data_nv(0, 0, 0);
                     DadoFuncionario.Cadastrar(new Funcionarios(nome, cpf, a, endereco, clt, Double.parseDouble(salario)));
+                    sucessoLabel.setVisible(true);
                 }
             });
 
@@ -470,7 +484,12 @@ public class CadastroGeral {
             JTextField cidadeField = new JTextField(14); 
             cidadeField.setBounds(120, 40, 170, 20);
             cidadeField.setOpaque(false);
-            
+
+            JLabel sucessoLabel = new JLabel("Cadastrado com sucesso!");
+            sucessoLabel.setBounds(120, 160, 200, 20);
+            sucessoLabel.setVisible(false);
+            sucessoLabel.setForeground(new Color(255, 45, 0));
+            formularioPanel.add(sucessoLabel);
          
             JButton okButton = new JButton("OK");
             okButton.setBounds(340, 160, 80, 20);
@@ -481,6 +500,7 @@ public class CadastroGeral {
                     String nome = nomeField.getText();
                     String cpf = cidadeField.getText();
                      DadosAeroporto.cadastrar(new Aeroporto(nome, cpf, new ArrayList<>()));
+                     sucessoLabel.setVisible(true);
                 }
             });
 
@@ -564,6 +584,11 @@ public class CadastroGeral {
             for(int i =2024; i>=1900; i--) {
             	ano.addItem(i);
             }
+            JLabel sucessoLabel = new JLabel("Cadastrado com Sucesso!");
+            sucessoLabel.setBounds(120, 160, 200, 20);
+            sucessoLabel.setVisible(false);
+            sucessoLabel.setForeground(new Color(255, 45, 0));
+            formularioPanel.add(sucessoLabel);
 
             JButton okButton = new JButton("OK");
             okButton.setBounds(340, 160, 80, 20);
@@ -581,6 +606,7 @@ public class CadastroGeral {
                     String endereco = enderecoField.getText();
                     String data = dia.getSelectedItem() + "/" + mes.getSelectedItem() + "/" + ano.getSelectedItem();
                     DadosHoteis.Cadastrar(new Hoteis(cnpj, nome, nomef, data, endereco, (float) 3.0, a));
+                    sucessoLabel.setVisible(true);
                 }
             });
 
@@ -667,6 +693,12 @@ public class CadastroGeral {
             	ano.addItem(i);
             }
 
+            JLabel sucessoLabel = new JLabel("Cadastrado com sucesso!");
+            sucessoLabel.setBounds(120, 160, 200, 20);
+            sucessoLabel.setVisible(false);
+            sucessoLabel.setForeground(new Color(255, 45, 0));
+            formularioPanel.add(sucessoLabel);
+
             JButton okButton = new JButton("OK");
             okButton.setBounds(340, 160, 80, 20);
             okButton.setOpaque(false);
@@ -680,6 +712,7 @@ public class CadastroGeral {
                     String endereco = enderecoField.getText();
                     String desconto = quartosField.getText();
                     String data = dia.getSelectedItem() + "/" + mes.getSelectedItem() + "/" + ano.getSelectedItem();
+                    sucessoLabel.setVisible(true);
 
                 }
             });
@@ -712,11 +745,12 @@ public class CadastroGeral {
 
             JLabel cpfLabel = new JLabel("Origem:");
             cpfLabel.setBounds(120, 40, 70, 20);
-            JComboBox <Aeroporto> origemField = new JComboBox<>();
+            JComboBox <String> origemField = new JComboBox<>();
+            
             ArrayList<Aeroporto> aux;
             aux = DadosAeroporto.retornaaero();
             for(int i = 0 ; i<aux.size(); i++){
-                origemField.addItem(aux.get(i));
+                origemField.addItem(aux.get(i).getNome());
             }
 
             origemField.setBounds(170, 40, 90, 20);
@@ -725,11 +759,11 @@ public class CadastroGeral {
             JLabel carteiraLabel = new JLabel("Destino:");
             carteiraLabel.setBounds(280, 40, 80, 20);
             JTextField carteiraField = new JTextField(12);
-            JComboBox <Aeroporto> destinoField = new JComboBox<>();
+            JComboBox <String> destinoField = new JComboBox<>();
             ArrayList<Aeroporto> auxx;
             auxx = DadosAeroporto.retornaaero();
             for(int i = 0; i<auxx.size(); i++){
-                destinoField.addItem(auxx.get(i));
+                destinoField.addItem(auxx.get(i).getNome());
             }
             destinoField.setBounds(330, 40, 90, 20);
             
@@ -744,8 +778,13 @@ public class CadastroGeral {
             JCheckBox ativo = new JCheckBox("Ativo");
             ativo.setBounds(120, 100, 70, 20);
             ativo.setOpaque(false);
-            
-          
+
+
+            JLabel sucessoLabel = new JLabel("Cadastrado com sucesso!");
+            sucessoLabel.setBounds(120, 160, 200, 20);
+            sucessoLabel.setVisible(false);
+            sucessoLabel.setForeground(new Color(255, 45, 0));
+            formularioPanel.add(sucessoLabel);
 
             JButton okButton = new JButton("OK");
             okButton.setBounds(340, 160, 80, 20);
@@ -754,13 +793,20 @@ public class CadastroGeral {
                 @Override
                 public void actionPerformed(ActionEvent e) {
                     String nome = nomeField.getText();
-                    Aeroporto ori = (Aeroporto) origemField.getSelectedItem();
-                    Aeroporto destin = (Aeroporto) destinoField.getSelectedItem();
+                    Aeroporto ori = null;
+                    for(int i = 0; i< aux.size(); i++){
+                        if(aux.get(i).getNome() == origemField.getSelectedItem()) {ori = (aux.get(i)); break;}
+                    }
+                    Aeroporto destin = null;
+                    for(int i = 0; i< auxx.size(); i++){
+                        if(auxx.get(i).getNome() == destinoField.getSelectedItem()){ destin = (auxx.get(i)); break;}
+                    }
                     String cod = quartosField.getText();
                     boolean atv = ativo.isSelected();
                     Trechos aux = new Trechos(ori, destin, nome, cod);
 
                     DadosTrecho.Inserir(aux);
+                    sucessoLabel.setVisible(true);
                 }
             });
 
@@ -787,12 +833,13 @@ public class CadastroGeral {
         	
         	JLabel nomeLabel = new JLabel("Trecho:");
             nomeLabel.setBounds(10, 10, 80, 20);
-            JComboBox <Trechos> trechoField = new JComboBox<>();
+            JComboBox <String> trechoField = new JComboBox<>();
+
             trechoField.setBounds(120, 10, 100, 20);
             ArrayList<Trechos> a;
             a = DadosTrecho.retornatrechos();
             for(int i =0; i<a.size(); i++){
-                trechoField.addItem(a.get(i));
+                trechoField.addItem(a.get(i).getNome());
             }
 
            
@@ -823,15 +870,19 @@ public class CadastroGeral {
             for(int i =1; i<=12; i++) {
             	mes.addItem(i);
             }
-            for(int i =2024; i>=1900; i--) {
+            for(int i = 2024; i<=2030; i--) {
             	ano.addItem(i);
             }
             
             JCheckBox ativo = new JCheckBox("Ativo");
             ativo.setBounds(120, 100, 70, 20);
             ativo.setOpaque(false);
-            
-          
+
+            JLabel sucessoLabel = new JLabel("Cadastrado com sucesso!");
+            sucessoLabel.setBounds(120, 160, 200, 20);
+            sucessoLabel.setVisible(false);
+            sucessoLabel.setForeground(new Color(255, 45, 0));
+            formularioPanel.add(sucessoLabel);
 
             JButton okButton = new JButton("OK");
             okButton.setBounds(340, 160, 80, 20);
@@ -839,8 +890,14 @@ public class CadastroGeral {
             okButton.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
-                    Data_nv a = new Data_nv((int) dia.getSelectedItem(), (int) mes.getSelectedItem(), (int) ano.getSelectedItem());
-                    DadosVoo.Cadastra(new Voo((Trechos)trechoField.getSelectedItem(), a, Double.parseDouble(quartosField.getText()), ativo.isSelected()));
+                    Data_nv b = new Data_nv((int) dia.getSelectedItem(), (int) mes.getSelectedItem(), (int) ano.getSelectedItem());
+                    Trechos l = null;
+                    for(int i = 0; i<a.size(); i++){
+                        if(a.get(i).getNome() == trechoField.getSelectedItem()){ l = a.get(i); break;}
+
+                    }
+                    DadosVoo.Cadastra(new Voo((Trechos)trechoField.getSelectedItem(), b, Double.parseDouble(quartosField.getText()), ativo.isSelected()));
+                    sucessoLabel.setVisible(true);
 
                 }
             });
