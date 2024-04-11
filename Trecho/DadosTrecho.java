@@ -79,4 +79,14 @@ public class DadosTrecho {
         Arquivo.gravar(vetTrechos, "trechos.dat");
         return true;
     }
+
+    public static ArrayList<Trechos> copia()
+    {
+        ArrayList<Trechos> e = new ArrayList<Trechos>();
+        for(Trechos x : vetTrechos)
+        {
+            e.add(x);
+        }
+        return e;
+    }
 }
