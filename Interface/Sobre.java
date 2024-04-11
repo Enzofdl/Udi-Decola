@@ -39,20 +39,21 @@ public class Sobre {
     }
 
     public void initialize() {
+        DadosTrecho.Inicializar();
         frmUdidecola = new JFrame();
         frmUdidecola.setTitle("UdiDecola");
         frmUdidecola.setAutoRequestFocus(true);
         frmUdidecola.setName("UdiDecola");
         frmUdidecola.setResizable(false);
         frmUdidecola.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-       // frmUdidecola.set
+        // frmUdidecola.set
         frmUdidecola.setSize(800, 600);
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-        
+
         // Calcular posição central
         int centerX = (int) ((screenSize.getWidth() - frmUdidecola.getWidth()) / 2);
         int centerY = (int) ((screenSize.getHeight() - frmUdidecola.getHeight()) / 2);
-        
+
         // Definir a posição da janela como central
         frmUdidecola.setLocation(centerX, centerY);
 
@@ -69,25 +70,25 @@ public class Sobre {
                 g2d.setPaint(new java.awt.GradientPaint(0, 0, startColor, 0, getHeight(), endColor));
                 g2d.fillRect(0, 0, getWidth(), getHeight());
                 g2d.dispose();
-			
-              this.setOpaque(false);
+
+                this.setOpaque(false);
                 // Adicionar imagem de fundo
                 ImageIcon imageIcon = new ImageIcon("C:\\Users\\filip\\OneDrive\\Área de Trabalho\\Design UdiDecola\\Logotipo\\01 - Imagem 01 - EDITADA (COM GRADIENTE).png");
                 Image image = imageIcon.getImage();
                 g.drawImage(image, 0, 0, getWidth(), getHeight(), this);
             }
         };
-        
-        
+
+
         frmUdidecola.setContentPane(contentPane);
-        
-        
+
+
         contentPane.setLayout(null);
-        
-        
-        
-        
-        
+
+
+
+
+
         JPanel servicos = new JPanel();
         servicos.setBounds(610, 55, 120, 40);
         servicos.setLayout(null);
@@ -107,24 +108,24 @@ public class Sobre {
         cadastro.setForeground(new Color(255, 255, 255, 255));
         aeroporto.setForeground(new Color(255, 255, 255, 255));
         cadastro.addActionListener(new ActionListener() {
-        	@Override
-        	public void actionPerformed(ActionEvent e) {
-        		CadastroGeral janelaSobre = new CadastroGeral();
-        		janelaSobre.initialize();
-        		janelaSobre.setVisible(true);
-        		frmUdidecola.dispose();
-        	}
-        	
-        	
-        	
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                CadastroGeral janelaSobre = new CadastroGeral();
+                janelaSobre.initialize();
+                janelaSobre.setVisible(true);
+                frmUdidecola.dispose();
+            }
+
+
+
         });
         servicos.add(cadastro);
         servicos.add(aeroporto);
 
-        
-        
-        
-        
+
+
+
+
         // Seu conteúdo da interface aqui
         JPanel Header = new JPanel();
         Header.setBounds(0, 0, 800, 70);
@@ -133,7 +134,7 @@ public class Sobre {
         Header.setLayout(null);
         contentPane.add(Header);
 
-        
+
 
         JPanel panel = new JPanel();
         panel.setOpaque(false);
@@ -167,7 +168,7 @@ public class Sobre {
                 janelaInicial.initialize();
                 janelaInicial.setVisible(true);
                 frmUdidecola.dispose();
-                
+
             }
         });
         button.setForeground(Color.WHITE);
@@ -187,33 +188,33 @@ public class Sobre {
         button_1.setOpaque(false);
         Header.add(button_1);
         button_1.addActionListener(new ActionListener() {
-        	@Override
-        	public void actionPerformed(ActionEvent e) {
-        		Sobre janelaSobre = new Sobre();
-        		janelaSobre.initialize();
-        		janelaSobre.setVisible(true);
-        		frmUdidecola.dispose();
-        	}
-        	
-        	
-        	
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Sobre janelaSobre = new Sobre();
+                janelaSobre.initialize();
+                janelaSobre.setVisible(true);
+                frmUdidecola.dispose();
+            }
+
+
+
         });
-		/*
-		aeroporto.addActionListener(new ActionListener() {
-        	@Override
-        	public void actionPerformed(ActionEvent e) {
-        		Aeroporto janelaSobre = new Aeroporto();
-        		janelaSobre.initialize();
-        		janelaSobre.setVisible(true);
-        		frmUdidecola.dispose();
-        	}
-        	
-        	
-        	
-        });*/
-		
-		
-        
+
+        aeroporto.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Aeroportos janelaSobre = new Aeroportos();
+                janelaSobre.initialize();
+                janelaSobre.setVisible(true);
+                frmUdidecola.dispose();
+            }
+
+
+
+        });
+
+
+
 
         JButton button_1_1 = new JButton("Serviços");
         button_1_1.setForeground(Color.WHITE);
@@ -229,19 +230,19 @@ public class Sobre {
         Linha_Header.setPreferredSize(new Dimension(800, 3));
         Header.add(Linha_Header);
         button_1_1.addActionListener(new ActionListener() {
-        	@Override
-        	public void actionPerformed(ActionEvent e) {
-        		if(servicos.isVisible()) {servicos.setVisible(false);}
-        		else {
-        			
-        			servicos.setVisible(true);
-        			
-        		}
-        		
-        		
-        	}
-        	
-        	
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if(servicos.isVisible()) {servicos.setVisible(false);}
+                else {
+
+                    servicos.setVisible(true);
+
+                }
+
+
+            }
+
+
         });
 		
 		JPanel UFU = new JPanel()
