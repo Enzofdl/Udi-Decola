@@ -4,6 +4,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
+import java.lang.Math;
 
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
@@ -13,6 +14,7 @@ import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.JComboBox;
 import javax.swing.JButton;
+
 
 import Trecho.*;
 
@@ -304,10 +306,8 @@ public class Aeroportos {
     	trechosPanel.removeAll();
     	//Contador para organização dos objetos na janela e para passar a página.
     	int inicio = pagina*6;
-    	int fim;
-    	
-    	if(inicio+6 < vetTrechos.size()) fim = inicio+6;
-    	else fim = vetTrechos.size();
+    	int fim = Math.min(inicio+6, vetTrechos.size());
+    
     	
     	for(int i = inicio; i < fim; i++)  {
     		
@@ -341,7 +341,7 @@ public class Aeroportos {
             	Fundo.setOpaque(true);
             	Fundo.setToolTipText("");
             	Fundo.setBackground(new Color(12, 128, 40));
-            	Fundo.setBounds(0, (42 * i), 566, 39);
+            	Fundo.setBounds(0, 42*i, 566, 39);
             	Fundo.setLayout(null);
             
             	trechosPanel.add(trechoLabel);
