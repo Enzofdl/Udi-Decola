@@ -296,9 +296,12 @@ public class Aeroportos {
                 ArrayList<Trechos> treechos = DadosTrecho.retornatrechos();
                 for(int i =0; i<treechos.size(); i++){
                     String nome;
-                    nome = treechos.get(i).getNome();
-                    trechosremove.addItem(nome);
-                }
+                    if(treechos.get(i).getOrigem().getNome() == aeroportos.getSelectedItem()) {
+
+                        nome = treechos.get(i).getNome();
+                        trechosremove.addItem(nome);
+                    }
+                    }
                 trechosremove.setBounds(50, 40, 200, 20);
                 trechosremove.setVisible(true);
                 remover.add(trechosremove);
@@ -322,7 +325,14 @@ public class Aeroportos {
                             if(treechos.get(i).getNome() == trechosremove.getSelectedItem()) { aremover = treechos.get(i); break;}
                         }
                         DadosTrecho.Remove((String) trechosremove.getSelectedItem());
+                        frmUdidecola.dispose();
+                        Aeroportos janelaSobre = new Aeroportos();
+                        janelaSobre.initialize();
+                        janelaSobre.setVisible(true);
                         remover.dispose();
+
+
+
                     }
 
                 });
