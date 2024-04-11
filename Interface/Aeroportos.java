@@ -29,6 +29,9 @@ public class Aeroportos {
         window.frmUdidecola.setVisible(true);
     }
 
+    public void setVisible(boolean a) {
+        frmUdidecola.setVisible(a);
+    }
     public Aeroportos() {
         initialize();
     }

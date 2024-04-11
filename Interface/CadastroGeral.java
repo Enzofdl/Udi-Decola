@@ -194,11 +194,11 @@ public class CadastroGeral {
         	
         	
         });
-		/*
+
 		aeroporto.addActionListener(new ActionListener() {
         	@Override
         	public void actionPerformed(ActionEvent e) {
-        		Aeroporto janelaSobre = new Aeroporto();
+        		Aeroportos janelaSobre = new Aeroportos();
         		janelaSobre.initialize();
         		janelaSobre.setVisible(true);
         		frmUdidecola.dispose();
@@ -206,7 +206,7 @@ public class CadastroGeral {
         	
         	
         	
-        });*/
+        });
 		
 		
         
