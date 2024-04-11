@@ -734,7 +734,7 @@ public class CadastroGeral {
             formularioPanel.add(ano);
             formularioPanel.add(okButton);
         }
-        
+
         else if (opcao.equals("Trecho")) {
         	
         	JLabel nomeLabel = new JLabel("Nome:");
