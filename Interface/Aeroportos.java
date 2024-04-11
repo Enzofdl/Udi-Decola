@@ -4,17 +4,8 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
-import java.lang.Math;
 
-import javax.swing.ImageIcon;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.JTextField;
-import javax.swing.SwingConstants;
-import javax.swing.JComboBox;
-import javax.swing.JButton;
-
+import javax.swing.*;
 
 import Trecho.*;
 
@@ -39,20 +30,21 @@ public class Aeroportos {
     }
 
     public void initialize() {
+        DadosTrecho.Inicializar();
         frmUdidecola = new JFrame();
         frmUdidecola.setTitle("UdiDecola");
         frmUdidecola.setAutoRequestFocus(true);
         frmUdidecola.setName("UdiDecola");
         frmUdidecola.setResizable(false);
         frmUdidecola.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-       // frmUdidecola.set
+        // frmUdidecola.set
         frmUdidecola.setSize(800, 600);
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-        
+
         // Calcular posição central
         int centerX = (int) ((screenSize.getWidth() - frmUdidecola.getWidth()) / 2);
         int centerY = (int) ((screenSize.getHeight() - frmUdidecola.getHeight()) / 2);
-        
+
         // Definir a posição da janela como central
         frmUdidecola.setLocation(centerX, centerY);
 
@@ -69,25 +61,25 @@ public class Aeroportos {
                 g2d.setPaint(new java.awt.GradientPaint(0, 0, startColor, 0, getHeight(), endColor));
                 g2d.fillRect(0, 0, getWidth(), getHeight());
                 g2d.dispose();
-			
-              this.setOpaque(false);
+
+                this.setOpaque(false);
                 // Adicionar imagem de fundo
                 ImageIcon imageIcon = new ImageIcon("C:\\Users\\filip\\OneDrive\\Área de Trabalho\\Design UdiDecola\\Logotipo\\01 - Imagem 01 - EDITADA (COM GRADIENTE).png");
                 Image image = imageIcon.getImage();
                 g.drawImage(image, 0, 0, getWidth(), getHeight(), this);
             }
         };
-        
-        
+
+
         frmUdidecola.setContentPane(contentPane);
-        
-        
+
+
         contentPane.setLayout(null);
-        
-        
-        
-        
-        
+
+
+
+
+
         JPanel servicos = new JPanel();
         servicos.setBounds(610, 55, 120, 40);
         servicos.setLayout(null);
@@ -107,24 +99,24 @@ public class Aeroportos {
         cadastro.setForeground(new Color(255, 255, 255, 255));
         aeroporto.setForeground(new Color(255, 255, 255, 255));
         cadastro.addActionListener(new ActionListener() {
-        	@Override
-        	public void actionPerformed(ActionEvent e) {
-        		CadastroGeral janelaSobre = new CadastroGeral();
-        		janelaSobre.initialize();
-        		janelaSobre.setVisible(true);
-        		frmUdidecola.dispose();
-        	}
-        	
-        	
-        	
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                CadastroGeral janelaSobre = new CadastroGeral();
+                janelaSobre.initialize();
+                janelaSobre.setVisible(true);
+                frmUdidecola.dispose();
+            }
+
+
+
         });
         servicos.add(cadastro);
         servicos.add(aeroporto);
 
-        
-        
-        
-        
+
+
+
+
         // Seu conteúdo da interface aqui
         JPanel Header = new JPanel();
         Header.setBounds(0, 0, 800, 70);
@@ -133,7 +125,7 @@ public class Aeroportos {
         Header.setLayout(null);
         contentPane.add(Header);
 
-        
+
 
         JPanel panel = new JPanel();
         panel.setOpaque(false);
@@ -167,7 +159,7 @@ public class Aeroportos {
                 janelaInicial.initialize();
                 janelaInicial.setVisible(true);
                 frmUdidecola.dispose();
-                
+
             }
         });
         button.setForeground(Color.WHITE);
@@ -187,33 +179,33 @@ public class Aeroportos {
         button_1.setOpaque(false);
         Header.add(button_1);
         button_1.addActionListener(new ActionListener() {
-        	@Override
-        	public void actionPerformed(ActionEvent e) {
-        		Sobre janelaSobre = new Sobre();
-        		janelaSobre.initialize();
-        		janelaSobre.setVisible(true);
-        		frmUdidecola.dispose();
-        	}
-        	
-        	
-        	
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Sobre janelaSobre = new Sobre();
+                janelaSobre.initialize();
+                janelaSobre.setVisible(true);
+                frmUdidecola.dispose();
+            }
+
+
+
         });
-		/*
-		aeroporto.addActionListener(new ActionListener() {
-        	@Override
-        	public void actionPerformed(ActionEvent e) {
-        		Aeroporto janelaSobre = new Aeroporto();
-        		janelaSobre.initialize();
-        		janelaSobre.setVisible(true);
-        		frmUdidecola.dispose();
-        	}
-        	
-        	
-        	
-        });*/
-		
-		
-        
+
+        aeroporto.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Aeroportos janelaSobre = new Aeroportos();
+                janelaSobre.initialize();
+                janelaSobre.setVisible(true);
+                frmUdidecola.dispose();
+            }
+
+
+
+        });
+
+
+
 
         JButton button_1_1 = new JButton("Serviços");
         button_1_1.setForeground(Color.WHITE);
@@ -229,19 +221,19 @@ public class Aeroportos {
         Linha_Header.setPreferredSize(new Dimension(800, 3));
         Header.add(Linha_Header);
         button_1_1.addActionListener(new ActionListener() {
-        	@Override
-        	public void actionPerformed(ActionEvent e) {
-        		if(servicos.isVisible()) {servicos.setVisible(false);}
-        		else {
-        			
-        			servicos.setVisible(true);
-        			
-        		}
-        		
-        		
-        	}
-        	
-        	
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if(servicos.isVisible()) {servicos.setVisible(false);}
+                else {
+
+                    servicos.setVisible(true);
+
+                }
+
+
+            }
+
+
         });
 		
 		//Array list que contem todos os trechos.
@@ -263,6 +255,86 @@ public class Aeroportos {
 		JComboBox <String> aeroportos = new JComboBox<> (arrayAeroporto);
 		aeroportos.setBounds(309, 129, 144, 22);
 		contentPane.add(aeroportos);
+
+        JButton removerbut = new JButton("Remover Trecho");
+        removerbut.setBounds(533, 129, 150, 22);
+        removerbut.setVisible(true);
+        removerbut.setBackground(new Color(255, 0, 0, 50));
+        removerbut.setOpaque(false);
+        contentPane.add(removerbut);
+
+        JFrame remover = new JFrame(){
+
+            protected void paintComponent(Graphics g) {
+                super.paint(g);
+                // Desenhar o degradê
+                Graphics2D g2d = (Graphics2D) g.create();
+                g2d.setRenderingHint(RenderingHints.KEY_RENDERING, RenderingHints.VALUE_RENDER_QUALITY);
+                Color startColor = new Color(0, 113, 27); // Cor inicial do degradê
+                Color endColor = new Color(109, 245, 142); // Cor final do degradê
+                g2d.setPaint(new java.awt.GradientPaint(0, 0, startColor, 0, getHeight(), endColor));
+                g2d.fillRect(0, 0, getWidth(), getHeight());
+                g2d.dispose();
+
+
+            }
+        };
+        remover.setSize(300, 200);
+        remover.setName("Remover Trecho");
+        remover.setTitle("Remover Trecho");
+        remover.setResizable(false);
+
+
+
+        removerbut.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JComboBox<String> trechosremove = new JComboBox<>();
+                ArrayList<Trechos> treechos = DadosTrecho.retornatrechos();
+                for(int i =0; i<treechos.size(); i++){
+                    String nome;
+                    nome = treechos.get(i).getNome();
+                    trechosremove.addItem(nome);
+                }
+                trechosremove.setBounds(50, 40, 200, 20);
+                trechosremove.setVisible(true);
+                remover.add(trechosremove);
+                JButton confirma = new JButton("Confirmar");
+                JButton cancela = new JButton("Cancelar");
+                confirma.setBounds(50, 75, 100, 20);
+                cancela.setBounds(160, 75, 100, 20);
+                confirma.setVisible(true);
+                cancela.setVisible(true);
+                confirma.setOpaque(false);
+                cancela.setOpaque(false);
+                remover.add(confirma);
+                remover.add(cancela);
+                remover.setLayout(null);
+               remover.setVisible(true);
+                confirma.addActionListener(new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        Trechos aremover = null;
+                        for(int i =0; i < treechos.size(); i++) {
+                            if(treechos.get(i).getNome() == trechosremove.getSelectedItem()) { aremover = treechos.get(i); break;}
+                        }
+                        DadosTrecho.Remove((String) trechosremove.getSelectedItem());
+                        remover.dispose();
+                    }
+
+                });
+                cancela.addActionListener(new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        remover.dispose();
+
+                    }
+                });
+
+
+            }
+        });
+
 		
 		JPanel trechosPanel = new JPanel();
 		trechosPanel.setBounds(117, 220, 566, 300);
@@ -306,8 +378,10 @@ public class Aeroportos {
     	trechosPanel.removeAll();
     	//Contador para organização dos objetos na janela e para passar a página.
     	int inicio = pagina*6;
-    	int fim = Math.min(inicio+6, vetTrechos.size());
-    
+    	int fim;
+    	
+    	if(inicio+6 < vetTrechos.size()) fim = inicio+6;
+    	else fim = vetTrechos.size();
     	
     	for(int i = inicio; i < fim; i++)  {
     		
@@ -341,7 +415,7 @@ public class Aeroportos {
             	Fundo.setOpaque(true);
             	Fundo.setToolTipText("");
             	Fundo.setBackground(new Color(12, 128, 40));
-            	Fundo.setBounds(0, 42*i, 566, 39);
+            	Fundo.setBounds(0, (42 * i), 566, 39);
             	Fundo.setLayout(null);
             
             	trechosPanel.add(trechoLabel);
