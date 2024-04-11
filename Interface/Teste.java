@@ -19,6 +19,7 @@ import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 
 import java.awt.Label;
+import Trecho.*;
 
 public class Teste {
 
@@ -30,7 +31,7 @@ public class Teste {
     	frmUdidecola.setVisible(a);
     }
     public void initialize() {
-	Dadostrecho.inicializar();
+	DadosTrecho.Inicializar();
         frmUdidecola = new JFrame();
         frmUdidecola.setTitle("UdiDecola");
         frmUdidecola.setAutoRequestFocus(true);

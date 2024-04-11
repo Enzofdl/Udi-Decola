@@ -1,16 +1,6 @@
-package interfaceteste;
+package Interface;
 
-import java.awt.BorderLayout;
-import java.awt.Button;
-import java.awt.Choice;
-import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.Font;
-import java.awt.GradientPaint;
-import java.awt.Graphics;
-import java.awt.Graphics2D;
-import java.awt.Image;
-import java.awt.RenderingHints;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
@@ -21,12 +11,11 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
-import java.awt.Label;
 import javax.swing.JComboBox;
 import javax.swing.JButton;
 
-import Trecho.DadosTrecho;
-import Trecho.Trechos;
+import Trecho.*;
+
 
 public class Aeroportos {
 
@@ -251,7 +240,7 @@ public class Aeroportos {
         });
 		
 		//Array list que contem todos os trechos.
-		ArrayList <Trechos> vetTrechos = DadosTrecho.retornaTrechos();
+		ArrayList <Trechos> vetTrechos = DadosTrecho.retornatrechos();
 		//Array list que irá conter os nomes dos aeroportos.
 		ArrayList <String> nomeAeroporto = new ArrayList <String>();
 		
@@ -320,7 +309,7 @@ public class Aeroportos {
     	for(int i = inicio; i < fim; i++)  {
     		
     		//Pega o trecho que será printado nesse instante.
-    		Trecho trechoAtual = vetTrechos.get(i);
+    		Trechos trechoAtual = vetTrechos.get(i);
     		
     		//Se o aeroporto em questão for igual ao aeroporto do trecho percorrido, então...
     		if (opcao.equals(trechoAtual.getOrigem().getNome()))	{	
@@ -329,7 +318,7 @@ public class Aeroportos {
     			trechoLabel.setForeground(Color.WHITE);
     			trechoLabel.setBounds(10, 42*i, 80, 25);
             
-    			JLabel partidaLabel = new JLabel(trechoAtual.getOrigem());
+    			JLabel partidaLabel = new JLabel(trechoAtual.getOrigem().getNome());
     			partidaLabel.setFont(new Font("Malgun Gothic", Font.PLAIN, 15));
     			partidaLabel.setForeground(Color.WHITE);
     			partidaLabel.setBounds(200, 42*i, 80, 25);
@@ -339,7 +328,7 @@ public class Aeroportos {
     			setaLabel.setForeground(Color.WHITE);
     			setaLabel.setBounds(300, 42*i, 80, 25);
             
-    			JLabel destinoLabel = new JLabel(trechoAtual.getDestino());
+    			JLabel destinoLabel = new JLabel(trechoAtual.getDestino().getNome());
     			destinoLabel.setFont(new Font("Malgun Gothic", Font.PLAIN, 15));
     			destinoLabel.setForeground(Color.WHITE);
             	destinoLabel.setBounds(330, 42*i, 80, 25);
@@ -349,7 +338,7 @@ public class Aeroportos {
             	Fundo.setOpaque(true);
             	Fundo.setToolTipText("");
             	Fundo.setBackground(new Color(12, 128, 40));
-            	Fundo.setBounds(0, 0 + (42*i), 566, 39);
+            	Fundo.setBounds(0, (42 * i), 566, 39);
             	Fundo.setLayout(null);
             
             	trechosPanel.add(trechoLabel);
@@ -374,7 +363,7 @@ public class Aeroportos {
         avancar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				pagina++;
-				exibirAeroportos(opcao, trechosPanel, vetTrechos, avancar, voltar);
+				exibirAeroportos(opcao, trechosPanel, vetTrechos, avancar, voltar, contentPane);
 				JLabel numeroPag = new JLabel("Pagina " + pagina);
 				numeroPag.setFont(new Font("Malgun Gothic", Font.PLAIN, 13));
 				numeroPag.setBounds(117, 526, 69, 24);
@@ -385,7 +374,7 @@ public class Aeroportos {
 		voltar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				pagina--;
-				exibirAeroportos(opcao, trechosPanel, vetTrechos, avancar, voltar);
+				exibirAeroportos(opcao, trechosPanel, vetTrechos, avancar, voltar, contentPane);
 				JLabel numeroPag = new JLabel("Pagina " + pagina);
 				numeroPag.setFont(new Font("Malgun Gothic", Font.PLAIN, 13));
 				numeroPag.setBounds(117, 526, 69, 24);

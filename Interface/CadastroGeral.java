@@ -19,7 +19,6 @@ import Voo.*;
 public class CadastroGeral {
 
     private JFrame frmUdidecola;
-   
 
     public static void main(String[] args) {
         CadastroGeral window = new CadastroGeral();
@@ -35,6 +34,7 @@ public class CadastroGeral {
     }
 
     public void initialize() {
+        DadosTrecho.Inicializar();
         frmUdidecola = new JFrame();
         frmUdidecola.setTitle("UdiDecola");
         frmUdidecola.setAutoRequestFocus(true);
