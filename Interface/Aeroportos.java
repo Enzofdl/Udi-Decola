@@ -16,6 +16,7 @@ public class Aeroportos {
     private JTextField combTestador;
     
     private int pagina = 0;
+    private int inicio = 1000;
 
     public static void main(String[] args) {
         Aeroportos window = new Aeroportos();
@@ -377,12 +378,9 @@ public class Aeroportos {
     private void exibirAeroportos(String opcao, JPanel trechosPanel, ArrayList <Trechos> vetTrechos, Button avancar, Button voltar, JPanel contentPane){
     	trechosPanel.removeAll();
     	//Contador para organização dos objetos na janela e para passar a página.
-    	int inicio = pagina*6;
-    	int fim;
-    	
-    	if(inicio+6 < vetTrechos.size()) fim = inicio+6;
-    	else fim = vetTrechos.size();
-    	
+    	inicio = pagina*6;
+    	int fim = Math.min(inicio+6, vetTrechos.size());
+    	int j = 0;
     	for(int i = inicio; i < fim; i++)  {
     		
     		//Pega o trecho que será printado nesse instante.
@@ -393,29 +391,29 @@ public class Aeroportos {
     			JLabel trechoLabel = new JLabel("Trecho " + trechoAtual.getNome());
     			trechoLabel.setFont(new Font("Malgun Gothic", Font.PLAIN, 15));
     			trechoLabel.setForeground(Color.WHITE);
-    			trechoLabel.setBounds(10, 42*i, 80, 25);
+    			trechoLabel.setBounds(10, 42*j, 80, 25);
             
     			JLabel partidaLabel = new JLabel(trechoAtual.getOrigem().getNome());
     			partidaLabel.setFont(new Font("Malgun Gothic", Font.PLAIN, 15));
     			partidaLabel.setForeground(Color.WHITE);
-    			partidaLabel.setBounds(200, 42*i, 80, 25);
+    			partidaLabel.setBounds(200, 42*j, 80, 25);
             
     			JLabel setaLabel = new JLabel("->");
     			setaLabel.setFont(new Font("Malgun Gothic", Font.PLAIN, 15));
     			setaLabel.setForeground(Color.WHITE);
-    			setaLabel.setBounds(300, 42*i, 80, 25);
+    			setaLabel.setBounds(300, 42*j, 80, 25);
             
     			JLabel destinoLabel = new JLabel(trechoAtual.getDestino().getNome());
     			destinoLabel.setFont(new Font("Malgun Gothic", Font.PLAIN, 15));
     			destinoLabel.setForeground(Color.WHITE);
-            	destinoLabel.setBounds(330, 42*i, 80, 25);
+            	destinoLabel.setBounds(330, 42*j, 80, 25);
             
            
             	JPanel Fundo = new JPanel();
             	Fundo.setOpaque(true);
             	Fundo.setToolTipText("");
             	Fundo.setBackground(new Color(12, 128, 40));
-            	Fundo.setBounds(0, (42 * i), 566, 39);
+            	Fundo.setBounds(0, 42*j, 566, 39);
             	Fundo.setLayout(null);
             
             	trechosPanel.add(trechoLabel);
@@ -423,8 +421,7 @@ public class Aeroportos {
             	trechosPanel.add(setaLabel);
             	trechosPanel.add(destinoLabel);
             	trechosPanel.add(Fundo);
-            	
-            	i++;
+            	j++;
     		}
             
     	}
@@ -433,30 +430,24 @@ public class Aeroportos {
         
         //Avançar acontece apenas enquanto inicio+6 (ultimo elemento) for menor que o tamanho do array. Não é possível ter mais elementos que o tamanho do array.
         avancar.setEnabled(vetTrechos.size() > (inicio+6));
-        //Não é possivel ir para uma pagina negativa;
-        voltar.setEnabled(pagina > 0);
+        //Não é possivel ir para uma pagina negativa
         
         
         avancar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				pagina++;
-				exibirAeroportos(opcao, trechosPanel, vetTrechos, avancar, voltar, contentPane);
-				JLabel numeroPag = new JLabel("Pagina " + pagina);
-				numeroPag.setFont(new Font("Malgun Gothic", Font.PLAIN, 13));
-				numeroPag.setBounds(117, 526, 69, 24);
-				contentPane.add(numeroPag);
+				if(vetTrechos.size() > inicio+6) {
+					pagina++;
+					exibirAeroportos(opcao, trechosPanel, vetTrechos, avancar, voltar, contentPane);
+				}
 			}
 
 		});
 		voltar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				pagina--;
-				exibirAeroportos(opcao, trechosPanel, vetTrechos, avancar, voltar, contentPane);
-				JLabel numeroPag = new JLabel("Pagina " + pagina);
-				numeroPag.setFont(new Font("Malgun Gothic", Font.PLAIN, 13));
-				numeroPag.setBounds(117, 526, 69, 24);
-				contentPane.add(numeroPag);
-				
+				if(pagina > 0) {
+					pagina--;
+					exibirAeroportos(opcao, trechosPanel, vetTrechos, avancar, voltar, contentPane);
+				}
 			}
 		});
     }
