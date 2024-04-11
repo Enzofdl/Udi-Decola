@@ -80,4 +80,17 @@ public class DadosTrecho {
         return true;
     }
 
+    public static ArrayList<Trechos> retornacom(String nome_aeroporto)
+    {
+        ArrayList<Trechos> r = new ArrayList<Trechos>();
+        for(Trechos x : vetTrechos)
+        {
+            if(nome_aeroporto.equals(x.getOrigem().getNome()))
+            {
+                r.add(x);
+            }
+        }
+        return r;
+    }
+
 }

@@ -4,6 +4,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
+import java.util.Objects;
 
 import javax.swing.*;
 
@@ -16,6 +17,7 @@ public class Aeroportos {
     private JTextField combTestador;
     
     private int pagina = 0;
+    private int qtd = 0;
     private int inicio = 1000;
 
     public static void main(String[] args) {
@@ -357,13 +359,36 @@ public class Aeroportos {
 		voltar.setBackground(Color.DARK_GRAY);
 		voltar.setBounds(591, 526, 43, 29);
 		contentPane.add(voltar);
-		
-		
+
+        avancar.setEnabled(vetTrechos.size() > (inicio+6));
+        avancar.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                if((qtd - inicio+6) > 0) {
+                    pagina++;
+                    System.out.println(pagina);
+                    exibirAeroportos((String) aeroportos.getSelectedItem(), trechosPanel, vetTrechos, avancar, voltar, contentPane);
+                }
+            }
+
+        });
+        voltar.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                if(pagina > 0) {
+                    pagina--;
+                    exibirAeroportos((String) aeroportos.getSelectedItem(), trechosPanel, vetTrechos, avancar, voltar, contentPane);
+                }
+            }
+        });
 		
 		
 		
 		aeroportos.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+                qtd = 0;
+                ArrayList<Trechos> arr = DadosTrecho.retornatrechos();
+                for (Trechos trechos : arr) {
+                    if (Objects.equals((String) aeroportos.getSelectedItem(), trechos.getOrigem().getNome())) qtd++;
+                }
 				exibirAeroportos((String) aeroportos.getSelectedItem(), trechosPanel, vetTrechos, avancar, voltar, contentPane);
 			}
 			
@@ -374,48 +399,52 @@ public class Aeroportos {
 
 		
 	}
-    
+
     private void exibirAeroportos(String opcao, JPanel trechosPanel, ArrayList <Trechos> vetTrechos, Button avancar, Button voltar, JPanel contentPane){
     	trechosPanel.removeAll();
     	//Contador para organização dos objetos na janela e para passar a página.
+        ArrayList<Trechos> r = DadosTrecho.retornacom(opcao);
     	inicio = pagina*6;
-    	int fim = Math.min(inicio+6, vetTrechos.size());
+    	int fim = Math.min(inicio+6, r.size());
     	int j = 0;
+
+
+
     	for(int i = inicio; i < fim; i++)  {
-    		
+
     		//Pega o trecho que será printado nesse instante.
-    		Trechos trechoAtual = vetTrechos.get(i);
-    		
+    		Trechos trechoAtual = r.get(i);
+
     		//Se o aeroporto em questão for igual ao aeroporto do trecho percorrido, então...
-    		if (opcao.equals(trechoAtual.getOrigem().getNome()))	{	
+    		if (opcao.equals(trechoAtual.getOrigem().getNome()))	{
     			JLabel trechoLabel = new JLabel("Trecho " + trechoAtual.getNome());
     			trechoLabel.setFont(new Font("Malgun Gothic", Font.PLAIN, 15));
     			trechoLabel.setForeground(Color.WHITE);
     			trechoLabel.setBounds(10, 42*j, 80, 25);
-            
+
     			JLabel partidaLabel = new JLabel(trechoAtual.getOrigem().getNome());
     			partidaLabel.setFont(new Font("Malgun Gothic", Font.PLAIN, 15));
     			partidaLabel.setForeground(Color.WHITE);
     			partidaLabel.setBounds(200, 42*j, 80, 25);
-            
+
     			JLabel setaLabel = new JLabel("->");
     			setaLabel.setFont(new Font("Malgun Gothic", Font.PLAIN, 15));
     			setaLabel.setForeground(Color.WHITE);
     			setaLabel.setBounds(300, 42*j, 80, 25);
-            
+
     			JLabel destinoLabel = new JLabel(trechoAtual.getDestino().getNome());
     			destinoLabel.setFont(new Font("Malgun Gothic", Font.PLAIN, 15));
     			destinoLabel.setForeground(Color.WHITE);
             	destinoLabel.setBounds(330, 42*j, 80, 25);
-            
-           
+
+
             	JPanel Fundo = new JPanel();
             	Fundo.setOpaque(true);
             	Fundo.setToolTipText("");
             	Fundo.setBackground(new Color(12, 128, 40));
             	Fundo.setBounds(0, 42*j, 566, 39);
             	Fundo.setLayout(null);
-            
+
             	trechosPanel.add(trechoLabel);
             	trechosPanel.add(partidaLabel);
             	trechosPanel.add(setaLabel);
@@ -423,32 +452,16 @@ public class Aeroportos {
             	trechosPanel.add(Fundo);
             	j++;
     		}
-            
+
     	}
     	trechosPanel.revalidate();
         trechosPanel.repaint();
-        
-        //Avançar acontece apenas enquanto inicio+6 (ultimo elemento) for menor que o tamanho do array. Não é possível ter mais elementos que o tamanho do array.
-        avancar.setEnabled(vetTrechos.size() > (inicio+6));
-        //Não é possivel ir para uma pagina negativa
-        
-        
-        avancar.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				if(vetTrechos.size() > inicio+6) {
-					pagina++;
-					exibirAeroportos(opcao, trechosPanel, vetTrechos, avancar, voltar, contentPane);
-				}
-			}
 
-		});
-		voltar.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				if(pagina > 0) {
-					pagina--;
-					exibirAeroportos(opcao, trechosPanel, vetTrechos, avancar, voltar, contentPane);
-				}
-			}
-		});
+        //Avançar acontece apenas enquanto inicio+6 (ultimo elemento) for menor que o tamanho do array. Não é possível ter mais elementos que o tamanho do array.
+
+        //Não é possivel ir para uma pagina negativa
+
+
+
     }
 }
