@@ -5,14 +5,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
-import javax.swing.ImageIcon;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.JTextField;
-import javax.swing.SwingConstants;
-import javax.swing.JComboBox;
-import javax.swing.JButton;
+import javax.swing.*;
 
 import Trecho.*;
 
@@ -261,6 +254,86 @@ public class Aeroportos {
 		JComboBox <String> aeroportos = new JComboBox<> (arrayAeroporto);
 		aeroportos.setBounds(309, 129, 144, 22);
 		contentPane.add(aeroportos);
+
+        JButton removerbut = new JButton("Remover Trecho");
+        removerbut.setBounds(533, 129, 150, 22);
+        removerbut.setVisible(true);
+        removerbut.setBackground(new Color(255, 0, 0, 50));
+        removerbut.setOpaque(false);
+        contentPane.add(removerbut);
+
+        JFrame remover = new JFrame(){
+
+            protected void paintComponent(Graphics g) {
+                super.paint(g);
+                // Desenhar o degradê
+                Graphics2D g2d = (Graphics2D) g.create();
+                g2d.setRenderingHint(RenderingHints.KEY_RENDERING, RenderingHints.VALUE_RENDER_QUALITY);
+                Color startColor = new Color(0, 113, 27); // Cor inicial do degradê
+                Color endColor = new Color(109, 245, 142); // Cor final do degradê
+                g2d.setPaint(new java.awt.GradientPaint(0, 0, startColor, 0, getHeight(), endColor));
+                g2d.fillRect(0, 0, getWidth(), getHeight());
+                g2d.dispose();
+
+
+            }
+        };
+        remover.setSize(300, 200);
+        remover.setName("Remover Trecho");
+        remover.setTitle("Remover Trecho");
+        remover.setResizable(false);
+
+
+
+        removerbut.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JComboBox<String> trechosremove = new JComboBox<>();
+                ArrayList<Trechos> treechos = DadosTrecho.retornatrechos();
+                for(int i =0; i<treechos.size(); i++){
+                    String nome;
+                    nome = treechos.get(i).getNome();
+                    trechosremove.addItem(nome);
+                }
+                trechosremove.setBounds(50, 40, 200, 20);
+                trechosremove.setVisible(true);
+                remover.add(trechosremove);
+                JButton confirma = new JButton("Confirmar");
+                JButton cancela = new JButton("Cancelar");
+                confirma.setBounds(50, 75, 100, 20);
+                cancela.setBounds(160, 75, 100, 20);
+                confirma.setVisible(true);
+                cancela.setVisible(true);
+                confirma.setOpaque(false);
+                cancela.setOpaque(false);
+                remover.add(confirma);
+                remover.add(cancela);
+                remover.setLayout(null);
+               remover.setVisible(true);
+                confirma.addActionListener(new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        Trechos aremover = null;
+                        for(int i =0; i < treechos.size(); i++) {
+                            if(treechos.get(i).getNome() == trechosremove.getSelectedItem()) { aremover = treechos.get(i); break;}
+                        }
+                        DadosTrecho.Remove((String) trechosremove.getSelectedItem());
+                        remover.dispose();
+                    }
+
+                });
+                cancela.addActionListener(new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        remover.dispose();
+
+                    }
+                });
+
+
+            }
+        });
+
 		
 		JPanel trechosPanel = new JPanel();
 		trechosPanel.setBounds(117, 220, 566, 300);
