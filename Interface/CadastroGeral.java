@@ -830,30 +830,36 @@ public class CadastroGeral {
         
         
         else if (opcao.equals("Voo")) {
-        	
-        	JLabel nomeLabel = new JLabel("Trecho:");
+
+
+            JLabel nomeLabel = new JLabel("Trecho:");
             nomeLabel.setBounds(10, 10, 80, 20);
             JComboBox <String> trechoField = new JComboBox<>();
-
             trechoField.setBounds(120, 10, 100, 20);
-            ArrayList<Trechos> a;
-            a = DadosTrecho.retornatrechos();
-            for(int i =0; i<a.size(); i++){
-                trechoField.addItem(a.get(i).getNome());
+            ArrayList<Trechos> trechosvoo;
+            trechosvoo = DadosTrecho.retornatrechos();
+            for(int i =0; i<trechosvoo.size(); i++){
+                trechoField.addItem(trechosvoo.get(i).getNome());
             }
 
-           
-         
-    
+
+            JLabel sucessoLabel = new JLabel("Cadastrado com sucesso!");
+            sucessoLabel.setBounds(120, 160, 200, 20);
+            sucessoLabel.setVisible(false);
+            sucessoLabel.setForeground(new Color(255, 45, 0));
+            formularioPanel.add(sucessoLabel);
+
+
+
             JLabel quartosLabel = new JLabel("Preço:");
             quartosLabel.setBounds(10, 40, 170, 20);
             JTextField quartosField = new JTextField(12);
             quartosField.setBounds(120, 40, 70, 20);
             quartosField.setOpaque(false);
-            
+
             JLabel dataLabel = new JLabel("Data:");
             dataLabel.setBounds(10, 70, 120, 20);
-            
+
             JComboBox <Integer> dia, mes, ano;
             dia = new JComboBox<>();
             mes = new JComboBox<>();
@@ -865,24 +871,20 @@ public class CadastroGeral {
             ano.setBounds(210, 70, 80, 20);
             ano.setOpaque(false);
             for(int i =1; i<=31; i++) {
-            	dia.addItem(i);
+                dia.addItem(i);
             }
             for(int i =1; i<=12; i++) {
-            	mes.addItem(i);
+                mes.addItem(i);
             }
-            for(int i = 2024; i<=2030; i--) {
-            	ano.addItem(i);
+            for(int i =2024; i<=2030; i++) {
+                ano.addItem(i);
             }
-            
+
             JCheckBox ativo = new JCheckBox("Ativo");
             ativo.setBounds(120, 100, 70, 20);
             ativo.setOpaque(false);
 
-            JLabel sucessoLabel = new JLabel("Cadastrado com sucesso!");
-            sucessoLabel.setBounds(120, 160, 200, 20);
-            sucessoLabel.setVisible(false);
-            sucessoLabel.setForeground(new Color(255, 45, 0));
-            formularioPanel.add(sucessoLabel);
+
 
             JButton okButton = new JButton("OK");
             okButton.setBounds(340, 160, 80, 20);
@@ -892,8 +894,8 @@ public class CadastroGeral {
                 public void actionPerformed(ActionEvent e) {
                     Data_nv b = new Data_nv((int) dia.getSelectedItem(), (int) mes.getSelectedItem(), (int) ano.getSelectedItem());
                     Trechos l = null;
-                    for(int i = 0; i<a.size(); i++){
-                        if(a.get(i).getNome() == trechoField.getSelectedItem()){ l = a.get(i); break;}
+                    for(int i = 0; i<trechosvoo.size(); i++){
+                        if(trechosvoo.get(i).getNome() == trechoField.getSelectedItem()){ l = trechosvoo.get(i); break;}
 
                     }
                     DadosVoo.Cadastra(new Voo((Trechos)trechoField.getSelectedItem(), b, Double.parseDouble(quartosField.getText()), ativo.isSelected()));
@@ -908,24 +910,25 @@ public class CadastroGeral {
             formularioPanel.add(dia);
             formularioPanel.add(mes);
             formularioPanel.add(ano);
-            
+
             formularioPanel.add(quartosLabel);
             formularioPanel.add(quartosField);
             formularioPanel.add(ativo);
-            
+
             formularioPanel.add(okButton);
         }
-        
-        
-        
-        
-        
-        
-        
+
+
+
+
+
+
+
 
         // Atualiza o layout do painel de formulário
         formularioPanel.revalidate();
         formularioPanel.repaint();
     }
+
 
 }
