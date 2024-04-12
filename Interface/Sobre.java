@@ -148,7 +148,7 @@ public class Sobre {
         panel.setLayout(null);
 
 
-        JLabel label = new JLabel(new ImageIcon("C:\\Users\\marco\\IdeaProjects\\Udi-Decola\\Design UdiDecola\\Logotipo\\Logo FINAL.png"));
+        JLabel label = new JLabel(new ImageIcon("C:\\Users\\marco\\IdeaProjects\\Udi-Decola\\Design UdiDecola\\Logotipo\\Logo FINAL reduzida.png"));
         label.setBackground(Color.LIGHT_GRAY);
         label.setHorizontalTextPosition(SwingConstants.CENTER);
         label.setSize(new Dimension(121, 62));
@@ -292,7 +292,7 @@ public class Sobre {
                 super.paintComponent(g);
                
                 // Adicionar imagem de fundo
-                ImageIcon imageIcon = new ImageIcon("C:\\Users\\marco\\IdeaProjects\\Udi-Decola\\Design UdiDecola\\Assets\\Ufu_logo.svg");
+                ImageIcon imageIcon = new ImageIcon("C:\\Users\\marco\\IdeaProjects\\Udi-Decola\\Design UdiDecola\\Ufu_logo.png");
                 Image image = imageIcon.getImage();
                 g.drawImage(image, 0, 0, getWidth(), getHeight(), this);
 				}
@@ -398,7 +398,7 @@ public class Sobre {
             protected void paintComponent(Graphics g) {
                 
                 // Adicionar imagem de fundo
-                ImageIcon imageIcon = new ImageIcon("C:\\Users\\marco\\Downloads\\Untitled.png");
+                ImageIcon imageIcon = new ImageIcon("C:\\Users\\marco\\IdeaProjects\\Udi-Decola\\Design UdiDecola\\Assets\\Github_logo.png");
                 Image image = imageIcon.getImage();
                 g.drawImage(image, 0, 0, getWidth(), getHeight(), this);
 				}

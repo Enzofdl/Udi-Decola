@@ -143,7 +143,7 @@ public class CadastroGeral {
         panel.setLayout(null);
 
 
-        JLabel label = new JLabel(new ImageIcon("C:\\Users\\marco\\Downloads\\Untitled.png"));
+        JLabel label = new JLabel(new ImageIcon("C:\\Users\\marco\\IdeaProjects\\Udi-Decola\\Design UdiDecola\\Logotipo\\Logo FINAL reduzida.png"));
         label.setBackground(Color.LIGHT_GRAY);
         label.setHorizontalTextPosition(SwingConstants.CENTER);
         label.setSize(new Dimension(121, 62));

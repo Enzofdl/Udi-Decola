@@ -65,7 +65,7 @@ public class Teste {
 
                 this.setOpaque(false);
                 // Adicionar imagem de fundo
-                ImageIcon imageIcon = new ImageIcon("C:\\Users\\filip\\OneDrive\\Área de Trabalho\\Design UdiDecola\\Logotipo\\01 - Imagem 01 - EDITADA (COM GRADIENTE).png");
+                ImageIcon imageIcon = new ImageIcon("CC:\\Users\\marco\\IdeaProjects\\Udi-Decola\\Design UdiDecola\\Logotipo\\01 - Imagem 01 - EDITADA (COM GRADIENTE).png");
                 Image image = imageIcon.getImage();
                 g.drawImage(image, 0, 0, getWidth(), getHeight(), this);
             }
@@ -140,7 +140,7 @@ public class Teste {
         panel.setLayout(null);
 
 
-        JLabel label = new JLabel(new ImageIcon("C:\\Users\\filip\\OneDrive\\Área de Trabalho\\Design UdiDecola\\Logotipo\\Logo FINAL reduzida.png"));
+        JLabel label = new JLabel(new ImageIcon("C:\\Users\\marco\\IdeaProjects\\Udi-Decola\\Design UdiDecola\\Logotipo\\Logo FINAL reduzida.png"));
         label.setBackground(Color.LIGHT_GRAY);
         label.setHorizontalTextPosition(SwingConstants.CENTER);
         label.setSize(new Dimension(121, 62));
