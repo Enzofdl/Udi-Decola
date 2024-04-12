@@ -1,12 +1,29 @@
 package Aeroporto;
 
 import java.util.ArrayList;
+import Trecho.*;
 public class DadosAeroporto {
     private static ArrayList<Aeroporto> vetaero = new ArrayList<Aeroporto>();
 
 
     public static ArrayList<Aeroporto> retornaaero(){
         return vetaero;
+    }
+
+    public static void Inicializar()
+    {
+        ArrayList<Trechos> t = DadosTrecho.retornatrechos();
+        for(Trechos x : t)
+        {
+            if(!(Existe(x.getOrigem().getNome())))
+            {
+                vetaero.add( x.getOrigem());
+            }
+            if(!(Existe(x.getDestino().getNome())))
+            {
+                vetaero.add(x.getDestino());
+            }
+        }
     }
 
     public static boolean cadastrar(Aeroporto a)

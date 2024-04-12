@@ -293,15 +293,26 @@ public class Aeroportos {
             @Override
             public void actionPerformed(ActionEvent e) {
                 JComboBox<String> trechosremove = new JComboBox<>();
-                ArrayList<Trechos> treechos = DadosTrecho.retornatrechos();
-                for(int i =0; i<treechos.size(); i++){
+                ArrayList<Trechos> treechos = DadosTrecho.retornacom((String)aeroportos.getSelectedItem());
+                for(Trechos x : treechos){
                     String nome;
-                    if(treechos.get(i).getOrigem().getNome() == aeroportos.getSelectedItem()) {
+                    nome = x.getNome();
+                    trechosremove.addItem(nome);
+                }
+                aeroportos.addActionListener(new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        trechosremove.removeAllItems();
 
-                        nome = treechos.get(i).getNome();
-                        trechosremove.addItem(nome);
+                        String aero = (String) aeroportos.getSelectedItem();
+
+                        ArrayList<Trechos> treechos = DadosTrecho.retornacom(aero);
+                        for (Trechos x : treechos) {
+                            String nome = x.getNome();
+                            trechosremove.addItem(nome);
+                        }
                     }
-                    }
+                });
                 trechosremove.setBounds(50, 40, 200, 20);
                 trechosremove.setVisible(true);
                 remover.add(trechosremove);

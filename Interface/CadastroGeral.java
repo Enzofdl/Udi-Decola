@@ -35,6 +35,7 @@ public class CadastroGeral {
 
     public void initialize() {
         DadosTrecho.Inicializar();
+        DadosAeroporto.Inicializar();
         frmUdidecola = new JFrame();
         frmUdidecola.setTitle("UdiDecola");
         frmUdidecola.setAutoRequestFocus(true);
@@ -885,7 +886,6 @@ public class CadastroGeral {
             ativo.setOpaque(false);
 
 
-
             JButton okButton = new JButton("OK");
             okButton.setBounds(340, 160, 80, 20);
             okButton.setOpaque(false);
@@ -898,7 +898,7 @@ public class CadastroGeral {
                         if(trechosvoo.get(i).getNome() == trechoField.getSelectedItem()){ l = trechosvoo.get(i); break;}
 
                     }
-                    DadosVoo.Cadastra(new Voo((Trechos)trechoField.getSelectedItem(), b, Double.parseDouble(quartosField.getText()), ativo.isSelected()));
+                    DadosVoo.Cadastra(new Voo(DadosTrecho.Buscar((String)trechoField.getSelectedItem()), b, Double.parseDouble(quartosField.getText()), ativo.isSelected()));
                     sucessoLabel.setVisible(true);
 
                 }
